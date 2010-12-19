@@ -140,8 +140,12 @@ autocmd BufEnter * execute ":lcd " .  expand("%:p:h")
 " -------------------
 " vimrc をリローダブルにする
 noremap <C-c><C-c> <C-c>
-noremap <C-c><C-e>e :edit $HOME/.vimrc<CR>
-noremap <C-c><C-e>s :source $HOME/.vimrc<CR>
+noremap <C-c>ev :edit $HOME/.vimrc<CR>
+noremap <C-c>sv :source $HOME/.vimrc<CR>
+noremap <C-c>ez :edit $HOME/.zshrc<CR>
+noremap <C-c>sz :source $HOME/.zshrc<CR>
+noremap <C-c>ee :edit $HOME/.zshenv<CR>
+noremap <C-c>se :source $HOME/.zshenv<CR>
 
 " 表示行単位で移動
 noremap j gj
@@ -183,6 +187,9 @@ noremap <Silent> <C-]> <C-]>
 noremap ,a :abbreviate<Space>
 "noremap a iabbrev
 "noremap a cabbrev
+
+noremap <C-c>pp :set paste<CR>:set nonumber<CR>:set nolist<CR>
+noremap <C-c>pn :set nopaste<CR>:set number<CR>:set list<CR>
 
 " buffer
 noremap ee :e .
