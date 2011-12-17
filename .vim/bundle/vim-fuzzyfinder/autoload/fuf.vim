@@ -191,7 +191,7 @@ function fuf#prejump(mode)
         \   s:OPEN_TYPE_SPLIT   : 'split'    ,
         \   s:OPEN_TYPE_VSPLIT  : 'vsplit'   ,
         \   s:OPEN_TYPE_TAB     : 'tab split',
-        \ }[a:mode] 
+        \ }[a:mode]
 endfunction
 
 "
@@ -343,7 +343,7 @@ endfunction
 "
 let s:oneTimeVariables = []
 
-" 
+"
 function fuf#setOneTimeVariables(...)
   let s:oneTimeVariables += a:000
 endfunction
@@ -418,7 +418,7 @@ function fuf#loadDataFile(modeName, dataName)
   return map(lines, 'eval(v:val)')
 endfunction
 
-" 
+"
 function fuf#saveDataFile(modeName, dataName, items)
   if !s:dataFileAvailable
     return -1
@@ -427,7 +427,7 @@ function fuf#saveDataFile(modeName, dataName, items)
   return l9#writeFile(lines, l9#concatPaths([g:fuf_dataDir, a:modeName, a:dataName]))
 endfunction
 
-" 
+"
 function fuf#getDataFileTime(modeName, dataName)
   if !s:dataFileAvailable
     return -1
@@ -478,12 +478,12 @@ function fuf#editDataFile()
   call fuf#callbackitem#launch('', 0, '>Mode>', s:createEditDataListener(), dataFiles, 0)
 endfunction
 
-" 
+"
 function fuf#getRunningHandler()
   return s:runningHandler
 endfunction
 
-" 
+"
 function fuf#onComplete(findstart, base)
   return s:runningHandler.onComplete(a:findstart, a:base)
 endfunction
@@ -523,7 +523,7 @@ function s:makePartialMatchingExpr(target, pattern)
         \ string(l9#convertWildcardToRegexp(a:pattern)) . patternMigemo
 endfunction
 
-" 
+"
 function s:makeRefiningExpr(pattern)
   if g:fuf_fuzzyRefining
     let expr = s:makeFuzzyMatchingExpr('v:val.wordForRefining', a:pattern)
@@ -537,7 +537,7 @@ function s:makeRefiningExpr(pattern)
   endif
 endfunction
 
-" 
+"
 function s:makeAdditionalMigemoPattern(pattern)
   if !g:fuf_useMigemo || a:pattern =~# '[^\x01-\x7e]'
     return ''
@@ -604,14 +604,14 @@ function s:setRanks(item, pattern, exprBoundary, stats)
   let a:item.ranks = [
         \   s:evaluateLearningRank(a:item.word, a:stats),
         \   -s:scoreSequentialMatching(a:item.wordForRank, a:pattern),
-        \   -s:scoreBoundaryMatching(a:item.wordForBoundary, 
+        \   -s:scoreBoundaryMatching(a:item.wordForBoundary,
         \                            a:pattern, a:exprBoundary),
         \   a:item.index,
         \ ]
   return a:item
 endfunction
 
-" 
+"
 function s:evaluateLearningRank(word, stats)
   for i in range(len(a:stats))
     if a:stats[i].word ==# a:word
@@ -711,7 +711,7 @@ function s:activateFufBuffer()
   lcd .
   let cwd = getcwd()
   call l9#tempbuffer#openScratch(s:FUF_BUF_NAME, 'fuf', [], 1, 0, 1, {})
-  resize 1 " for issue #21 
+  resize 1 " for issue #21
   " lcd ... : countermeasure against auto-cd script
   lcd `=cwd`
   setlocal nocursorline   " for highlighting
@@ -746,16 +746,16 @@ let s:handlerBase = {}
 "
 " "
 " s:handler.getModeName()
-" 
+"
 " "
 " s:handler.getPrompt()
-" 
+"
 " "
 " s:handler.getCompleteItems(patternSet)
-" 
+"
 " "
 " s:handler.onOpen(word, mode)
-" 
+"
 " " Before entering FuzzyFinder buffer. This function should return in a short time.
 " s:handler.onModeEnterPre()
 "

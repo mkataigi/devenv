@@ -1,7 +1,7 @@
 *project.txt*	Plugin for managing multiple projects with multiple sources
 		For Vim version 6.x and Vim version 7.x.
 		Last Change: Fri 13 Oct 2006 10:20:13 AM EDT
-	
+
 
 				By Aric Blumer
 		      aricvim email-at-sign charter.net
@@ -244,7 +244,7 @@ Map	Action ~
 	line, and the file entry on that line will not be removed when you
 	refresh.  This is useful, for example, when you have . as an entry so
 	you can easily browse the directory.
-	
+
 	Note that this mapping is actually <LocalLeader>r, and the default of
 	|<LocalLeader>| is \.
 
@@ -541,7 +541,7 @@ g:proj_flags
 g:proj_run1 ...  g:proj_run9
 		Contains a Vim command to execute on the file.  See the
 		mappings of \1 to \9 above.
-		
+
 		  %f is replaced with the full path and filename
 		  %F is replaced with the full path and filename with spaces
 		     quoted
@@ -575,7 +575,7 @@ g:proj_run1 ...  g:proj_run9
 g:proj_run_fold1 ...  g:proj_run_fold9
 		Contains a Vim command to execute on the files in a fold.  See
 		the mappings of \f1 to \f9  and \F1 to \F9 above.
-		
+
 		%f is the filename, %h is replaced with the project home
 		directory, and %d is replaced with the CD directory.  Multiple
 		filenames can be handled in two ways:

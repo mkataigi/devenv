@@ -52,7 +52,7 @@ default behavior is as follows:
 
         kind      filetype    text before the cursor ~
         Keyword   *           two keyword characters
-        Filename  *           a filename character + a path separator 
+        Filename  *           a filename character + a path separator
                               + 0 or more filename character
         Omni      ruby        ".", "::" or non-word character + ":"
                               (|+ruby| required.)
@@ -363,7 +363,7 @@ CHANGELOG                                                      *acp-changelog*
   - Fixed a bug that setting 'spell' on a new buffer made typing go crazy.
 
 2.7
-  - Changed naming conventions for filenames, functions, commands, and options 
+  - Changed naming conventions for filenames, functions, commands, and options
     and thus renamed them.
   - Added g:acp_behaviorKeywordCommand option. If you prefer the previous
     behavior for keyword completion, set this option "\<C-n>".
@@ -372,18 +372,18 @@ CHANGELOG                                                      *acp-changelog*
   The following were done by Ingo Karkat:
 
   - ENH: Added support for setting a user-provided 'completefunc' during the
-    completion, configurable via g:acp_behavior. 
+    completion, configurable via g:acp_behavior.
   - BUG: When the configured completion is <C-p> or <C-x><C-p>, the command to
-    restore the original text (in on_popup_post()) must be reverted, too. 
+    restore the original text (in on_popup_post()) must be reverted, too.
   - BUG: When using a custom completion function (<C-x><C-u>) that also uses
     an s:...() function name, the s:GetSidPrefix() function dynamically
     determines the wrong SID. Now calling s:DetermineSidPrefix() once during
-    sourcing and caching the value in s:SID. 
+    sourcing and caching the value in s:SID.
   - BUG: Should not use custom defined <C-X><C-...> completion mappings. Now
     consistently using unmapped completion commands everywhere. (Beforehand,
     s:PopupFeeder.feed() used mappings via feedkeys(..., 'm'), but
     s:PopupFeeder.on_popup_post() did not due to its invocation via
-    :map-expr.) 
+    :map-expr.)
 
 2.6:
   - Improved the behavior of omni completion for HTML/XHTML.

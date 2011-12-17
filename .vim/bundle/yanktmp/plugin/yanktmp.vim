@@ -8,7 +8,7 @@
 "
 "  If :call YanktmpYank(), yank string write to tmpfile.
 "  And :call YanktmpPaste_p() or YanktmpPaste_P(), paste string from tmpfile.
-"  
+"
 "  Default tmp file is '/tmp/vimyanktmp'
 "  If you want to change tmp file.
 "  let g:yanktmp_file = '/tmp/example_tmp_file'

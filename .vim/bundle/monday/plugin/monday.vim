@@ -28,11 +28,11 @@ let s:numbers = ''
 
 function s:Add_word_pair(word1, word2)
   let w10 = tolower(a:word1)
-  let w11 = toupper(matchstr(a:word1, '.')) . matchstr(w10, '.*', 1) 
+  let w11 = toupper(matchstr(a:word1, '.')) . matchstr(w10, '.*', 1)
   let w12 = toupper(a:word2)
 
   let w20 = tolower(a:word2)
-  let w21 = toupper(matchstr(a:word2, '.')) . matchstr(w20, '.*', 1) 
+  let w21 = toupper(matchstr(a:word2, '.')) . matchstr(w20, '.*', 1)
   let w22 = toupper(a:word2)
 
   let s:words = s:words . w10 . ':' . w20 . ','
