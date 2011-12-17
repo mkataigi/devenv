@@ -52,7 +52,7 @@ endfunction
 " Creates quickfix list form given lines and opens the quickfix window if
 " errors exists.
 "
-" a:lines: 
+" a:lines:
 " a:jump: if non-zero, jump to the first error.
 function l9#quickfix#setMakeResult(lines)
   cexpr a:lines
@@ -83,7 +83,7 @@ endfunction
 
 " Highlights Quickfix lines by :sign.
 " Inspired by errormarker plugin.
-" 
+"
 " You can customize the highlighting via L9ErrorLine and L9WarningLine
 " highlight groups.
 function l9#quickfix#placeSign()

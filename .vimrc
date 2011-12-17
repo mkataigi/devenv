@@ -282,9 +282,9 @@ let g:explSplitBelow=1
 let g:explUseSeparators=1
 
 " yanktmp
-map <silent> sy :call YanktmpYank()<CR> 
-map <silent> sp :call YanktmpPaste_p()<CR> 
-map <silent> sP :call YanktmpPaste_P()<CR> 
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
 let g:yanktmp_file = '/Users/mkataigi/tmp/yanktmp'
 
 " yankring

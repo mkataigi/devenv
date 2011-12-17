@@ -345,22 +345,22 @@ endfun
 
 " ---------------------------------------------------------------------
 " ListWinPosn:
-"fun! ListWinPosn()                                                        " Decho 
-"  if !exists("b:cecutil_iwinposn") || b:cecutil_iwinposn == 0             " Decho 
+"fun! ListWinPosn()                                                        " Decho
+"  if !exists("b:cecutil_iwinposn") || b:cecutil_iwinposn == 0             " Decho
 "   call Decho("nothing on SWP stack")                                     " Decho
 "  else                                                                    " Decho
-"   let jwinposn= b:cecutil_iwinposn                                       " Decho 
-"   while jwinposn >= 1                                                    " Decho 
-"    if exists("b:cecutil_winposn{jwinposn}")                              " Decho 
-"     call Decho("winposn{".jwinposn."}<".b:cecutil_winposn{jwinposn}.">") " Decho 
-"    else                                                                  " Decho 
-"     call Decho("winposn{".jwinposn."} -- doesn't exist")                 " Decho 
-"    endif                                                                 " Decho 
-"    let jwinposn= jwinposn - 1                                            " Decho 
-"   endwhile                                                               " Decho 
+"   let jwinposn= b:cecutil_iwinposn                                       " Decho
+"   while jwinposn >= 1                                                    " Decho
+"    if exists("b:cecutil_winposn{jwinposn}")                              " Decho
+"     call Decho("winposn{".jwinposn."}<".b:cecutil_winposn{jwinposn}.">") " Decho
+"    else                                                                  " Decho
+"     call Decho("winposn{".jwinposn."} -- doesn't exist")                 " Decho
+"    endif                                                                 " Decho
+"    let jwinposn= jwinposn - 1                                            " Decho
+"   endwhile                                                               " Decho
 "  endif                                                                   " Decho
-"endfun                                                                    " Decho 
-"com! -nargs=0 LWP	call ListWinPosn()                                    " Decho 
+"endfun                                                                    " Decho
+"com! -nargs=0 LWP	call ListWinPosn()                                    " Decho
 
 " ---------------------------------------------------------------------
 " SaveUserMaps: this function sets up a script-variable (s:restoremap) {{{1
@@ -402,7 +402,7 @@ fun! SaveUserMaps(mapmode,maplead,mapchx,suffix)
    let dounmap= 0
    let mapmode= a:mapmode
   endif
- 
+
   " save single map :...something...
   if strpart(a:mapchx,0,1) == ':'
    let amap= strpart(a:mapchx,1)
@@ -418,7 +418,7 @@ fun! SaveUserMaps(mapmode,maplead,mapchx,suffix)
    if dounmap
     exe "silent! ".mapmode."unmap ".amap
    endif
- 
+
   " save single map <something>
   elseif strpart(a:mapchx,0,1) == '<'
    let amap       = a:mapchx
@@ -433,7 +433,7 @@ fun! SaveUserMaps(mapmode,maplead,mapchx,suffix)
    if dounmap
     exe "silent! ".mapmode."unmap ".amap
    endif
- 
+
   " save multiple maps
   else
    let i= 1

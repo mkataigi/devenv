@@ -19,7 +19,7 @@ function s:checkKey(key)
   endif
 endfunction
 
-" 
+"
 function l9#async#execute(key, cmd, cwd, input, appends)
   call s:checkKey(a:key)
   python asyncer.execute('a:key', 'a:cmd', 'a:cwd', 'a:input', 'a:appends')

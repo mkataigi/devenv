@@ -410,7 +410,7 @@ Example of use:
               \      '":" . matchstr(v:val, ''^....\zs\S*'')')
         endfunction
 
-        " execute one of the user-defined commands 
+        " execute one of the user-defined commands
         call fuf#givencmd#launch('', 0, '>', GetAllCommands())
 
 <
@@ -1822,8 +1822,8 @@ CHANGELOG                                                      *fuf-changelog*
   - Added 'initialInput' option to automatically insert a text at the
     beginning of a mode.
   - Changed that 'excludedPath' option works for the entire path.
-  - Renamed some options. 
-  - Changed default values of some options. 
+  - Renamed some options.
+  - Changed default values of some options.
   - Packed the mode-specific options to dictionaries.
   - Removed some options.
 

@@ -31,7 +31,7 @@ Copyright: (c) 2004-2006 by Charles E. Campbell, Jr.	*cecutil-copyright*
     let winposn= SaveWinPosn(0)
 
 	This operation will _only_ save the window position in winposn variable.
-	Ie. the window position will not appear on the b:winposn{} stack.  You 
+	Ie. the window position will not appear on the b:winposn{} stack.  You
 	will then need to use RestoreWinPosn(winposn) to restore to this window
 	position.
 

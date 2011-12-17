@@ -19,7 +19,7 @@ let s:L9_VERSION_PASSABLE = 101
 
 " returns true if given version is compatible.
 function l9#isCompatible(ver)
-  return 
+  return
 endfunction
 
 let s:VERSION_FACTOR = str2float('0.01')
@@ -49,7 +49,7 @@ function l9#guardScriptLoading(path, vimVersion, l9Version, exprs)
   return 1
 endfunction
 
-" 
+"
 function l9#getVersion()
   return s:L9_VERSION_CURRENT
 endfunction
@@ -471,7 +471,7 @@ endfunction
 "=============================================================================
 " VARIABLES {{{1
 
-" 
+"
 function l9#defineVariableDefault(name, default)
   if !exists(a:name)
     let {a:name} = a:default
@@ -511,7 +511,7 @@ endfunction
 " SIGN {{{1
 
 " Highlights lines using :sign define and :sign place.
-" 
+"
 " a:linehl, a:text, a:texthl: See |signs|. Ignored if empty string.
 " a:locations: List of [{buffer number}, {line number}] for highlighting
 function l9#placeSign(linehl, text, texthl, locations)
