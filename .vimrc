@@ -1,21 +1,28 @@
-" -------------------
+"  -------------------
 " init
 " -------------------
-autocmd!
+source $HOME/.vim/sources/functions.vimrc
+if has("unix")
+    source $HOME/.vim/sources/unix.vimrc
+elseif has("linux")
+    source $HOME/.vim/sources/linux.vimrc
+endif
+if version >= 700
+    source $HOME/.vim/sources/newvim.vimrc
+else
+    source $HOME/.vim/sources/oldvim.vimrc
+endif
 
 " -------------------
 " View
 " -------------------
-colorscheme default
+colorscheme desert
+set modeline
 set number       "行番号表示
 set ruler        "ルーラー表示
 set title        "ウィンドウタイトルを変更
 "set visualbell   "visual bellの使用
 set scrolloff=5
-if v:version >= 700
- set cursorline   "カーソル行を強調
- highlight CursorLine guibg=lightblue ctermbg=lightgray
-endif
 
 " -------------------
 " Language
@@ -52,6 +59,11 @@ set expandtab
 set list
 set listchars=tab:>-,trail:-,extends:<,precedes:<
 highlight SpecialKey ctermfg=darkgray
+augroup highlightIdegraphicSpace
+    autocmd!
+    autocmd ColorScheme * highlight IdeographicSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
+    autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+augroup END
 
 " -------------------
 " Input
@@ -76,6 +88,10 @@ set showmatch "対応する括弧を強調表示
 set cindent   "Cのインデント
 set foldmethod=syntax
 set grepprg=internal "内蔵grep
+augroup grepopen
+    autocmd!
+    autocmd QuickfixCmdPost vimgrep cw
+augroup END
 
 " -------------------
 " Mouse
@@ -88,14 +104,17 @@ set grepprg=internal "内蔵grep
 " -------------------
 set autowrite " ファイル切替時に自動保存
 set hidden " 保存しないで他のファイルを表示
-set backup         "バックアップ
+set backup "バックアップ
 set backupdir=$HOME/.vimback "バックアップディレクトリ
 set directory=$HOME/.vimtmp
 set history=10000  "ヒストリ件数
 set updatetime=500
-"set viminfo=""       ".viminfoファイルの設定
+"set viminfo="" ".viminfoファイルの設定
 let g:svbfre = '.\+'
-autocmd CursorHold * call NewUpdate()
+augroup CursorHold
+    autocmd!
+    autocmd CursorHold * call NewUpdate()
+augroup END
 
 " -------------------
 " Status Line
@@ -126,14 +145,17 @@ set dictionary=/usr/share/dict/words
 " File Type
 " -------------------
 syntax on "シンタックスハイライト
-"au FileType perl call PerlType()
+augroup syntax
+    autocmd!
+"    autocmd FileType perl call PerlType()
+augroup END
 filetype indent on "ファイルタイプによるインデントを行う
 filetype plugin on "ファイルタイプによるプラグインを使う
-" ファイルタイプに応じてテンプレートを自動読み込み
-autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
-" バッファを開いた時に、カレントディレクトリを自動で移動
-autocmd BufEnter * execute ":lcd " .  expand("%:p:h")
-
+augroup bufcmd
+    autocmd!
+    autocmd BufNewFile * silent! 0r $VIMHOME/templates/%:e.tpl
+    autocmd BufEnter * execute ":lcd " . expand("%:p:h")
+augroup END
 
 " -------------------
 " キーバインド
@@ -170,13 +192,16 @@ noremap s :%s/
 noremap ; :
 noremap <C-n> :nohl<CR>
 
-noremap <Silent> <C-c><C-w>p :set wrap<CR>
-noremap <Silent> <C-c><C-w>n :set nowrap<CR>
+noremap <Silent> <C-c>wo :set wrap<CR>
+noremap <Silent> <C-c>wn :set nowrap<CR>
 
-noremap <Silent> <C-c><C-r>t :set expandtab<CR>:retab<CR>
-noremap <Silent> <C-c><C-r>a :set expandtab<CR>:retab!<CR>
-noremap <Silent> <C-c><C-r>s :set noexpandtab<CR>:retab<CR>
-noremap <Silent> <C-c><C-r>b :set noexpandtab<CR>:retab!<CR>
+noremap <Silent> <C-c>ro :set expandtab<CR>:retab<CR>
+noremap <Silent> <C-c>rn :set noexpandtab<CR>:retab<CR>
+noremap <Silent> <C-c>eo :set expandtab<CR>:retab!<CR>
+noremap <Silent> <C-c>en :set noexpandtab<CR>:retab!<CR>
+
+noremap <Silent> <C-c>po :set paste<CR>:set nonumber<CR>:set nolist<CR>
+noremap <Silent> <C-c>pn :set nopaste<CR>:set number<CR>:set list<CR>
 
 noremap <Silent> gh :nohlsearch<CR>
 noremap ,<Space> :vimgrep<Space>
@@ -221,24 +246,22 @@ noremap <C-t>t :tabdo<Space>
 
 " window
 noremap <C-w><C-w> <C-w>
-noremap <Silent> ws :new<CR>
-noremap <Silent> wv :vnew<CR>
-noremap <Silent> wq :quit<CR>
-noremap <silent> <F1> :new<CR>
-noremap <silent> <F2> :vnew<CR>
-noremap <silent> <F3> :quit<CR>
-noremap wj <C-w>j
-noremap wk <C-w>k
-noremap wh <C-w>h
-noremap wl <C-w>l
-noremap w- <C-w>-
-noremap <Silent> w= <C-w>+
-noremap <Silent> w, <C-w><
-noremap <Silent> w. <C-w>>
+noremap <Silent> <C-w>n :new<CR>
+noremap <Silent> <C-w>v :vnew<CR>
+noremap <Silent> <C-w>q :quit<CR>
+"noremap <C-w>j <C-w>j
+"noremap <C-w>k <C-w>k
+"noremap <C-w>h <C-w>h
+"noremap <C-w>l <C-w>l
+noremap <silent> <C-w>- <C-w>-
+noremap <Silent> <C-w>= <C-w>+
+noremap <Silent> <C-w>, <C-w><
+noremap <Silent> <C-w>. <C-w>>
 
-" IDE
-noremap <C-i><C-i> <C-i>
-noremap <Silent> <C-i>w :Tlist<CR>
+" Compiler
+noremap <Silent> <C-c>cm :make<CR>
+noremap <Silent> <C-c>cp :compiler perl<CR>
+noremap <Silent> <C-c>cy :compiler python<CR>
 
 " help
 noremap ,h :<C-u>help<CR>
@@ -252,15 +275,17 @@ noremap <silent> <C-f><C-f> zA
 noremap <silent> <C-f><C-o> zO
 noremap <silent> <C-f><C-c> zC
 
-" undo
-noremap <C-c><C-g>+ g+
-noremap <C-c><C-g>- g-
-noremap <C-c><C-g>l :undolist<CR>
-noremap <C-c><C-g>e :undo NODE_NUMBER<CR>
+" tags
+noremap <C-]><C-]> <C-]>
+noremap <C-[><C-[> <C-t>
+noremap <C-]><C-w> <C-w>}
+noremap <C-[><C-w> <C-w><C-x>
 
-" paste mode
-noremap ,po :set paste<CR>
-noremap ,pn :set nopaste<CR>
+" undo
+"noremap g+ g+
+"noremap g- g-
+noremap gl :undolist<CR>
+noremap ge :undo NODE_NUMBER<CR>
 
 " Command
 inoremap <expr> <C-d>f strftime('%Y-%m-%dT%H:%M:%S')
@@ -268,11 +293,38 @@ inoremap <expr> <C-d>d strftime('%Y-%m-%d')
 inoremap <expr> <C-d>t strftime('%H:%M:%S')
 inoremap <silent> <expr> ,t (exists('#AutoComplPopGlobalAutoCommand#InsertEnter')) ? "\<C-o>:AutoComplPopDisable\<CR>" : "\<C-o>:AutoComplPopEnable\<CR>"
 
+
 " -------------------
-" Plugins
+" Vundle
+" -------------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/vundle/
+call vundle#rc('~/.vim/bundle')
+
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/unite.vim'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'msanders/snipmate.vim'
+Bundle 'ynkdir/vim-funlib'
+Bundle 'L9'
+Bundle 'AutoComplPop'
+Bundle 'FuzzyFinder'
+Bundle 'YankRing.vim'
+Bundle 'yanktmp.vim'
+
+filetype plugin indent on
+
+" -------------------
+" Plugins Configurations
 " -------------------
 " Pathogen
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 "call pathogen#helptags()
 
 " minibufexpl
@@ -281,29 +333,26 @@ let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBuffs = 1
 let g:miniBufExplSplitBelow = 0
 
-" Explore
-let g:explHideFiles='^\.,\.gz$,\.exe$,\.zip$'
-let g:explDetailedHelp=0
-let g:explWinSize=''
-let g:explSplitBelow=1
-let g:explUseSeparators=1
-
 " yanktmp
-map <silent> sy :call YanktmpYank()<CR> 
-map <silent> sp :call YanktmpPaste_p()<CR> 
-map <silent> sP :call YanktmpPaste_P()<CR> 
-let g:yanktmp_file = '/Users/mkataigi/tmp/yanktmp'
+map <silent> sy :call YanktmpYank()<CR>
+map <silent> sp :call YanktmpPaste_p()<CR>
+map <silent> sP :call YanktmpPaste_P()<CR>
+let g:yanktmp_file = "$HOME/.vimtmp/yanktmp"
 
 " yankring
+let g:yankring_manual_clipboard_check = 0
 let g:yankring_history_dir="$HOME/.vimtmp"
-
-" QuickBuf
-let g:qb_hotkey = "<F5>"
+nnoremap <silent> <C-c>y :YRShow<CR>
+let g:yankring_max_history = 10
+let g:yankring_window_height = 13
 
 " autocomplpop
-autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
-autocmd CmdwinEnter * AutoComplPopDisable
-autocmd CmdwinLeave * AutoComplPopEnable
+augroup AutoComplPop
+    autocmd!
+    autocmd FileType php let g:AutoComplPop_CompleteOption = '.,w,b,u,t,i,k~/.vim/dict/php.dict'
+    autocmd CmdwinEnter * AutoComplPopDisable
+    autocmd CmdwinLeave * AutoComplPopEnable
+augroup END
 
 " snippetsEmu
 filetype plugin on "CTRL + Bで設定
@@ -314,7 +363,10 @@ noremap <unique> <silent> eb :FufBuffer!<CR>
 noremap <unique> <silent> ef :FufFile!<CR>
 noremap <unique> <silent> em :FufMruFile!<CR>
 noremap <unique> <silent> ec :FufRenewCache<CR>
-autocmd FileType fuf nmap <C-c> <ESC>
+augroup FuzzyFinder
+    autocmd!
+    autocmd FileType fuf nmap <C-c> <ESC>
+augroup END
 let g:fuf_patternSeparator = ' '
 let g:fuf_modesDisable = ['mrucmd']
 let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
@@ -322,44 +374,33 @@ let g:fuf_mrufile_maxItem = 100
 let g:fuf_enumeratingLimit = 20
 let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
 
-" Pydiction
-let g:pydiction_location = '$VIMHOME/ftplugin/pydiction/complete-dict'
-let g:pydiction_menu_height = 20
-autocmd FileType python let g:pydiction_location = '$VIMHOME/.vim/pydiction/complete-dict'
-
-" ZenCoding
-let g:user_zen_expandabbr_key = '<c-e>'
-let g:user_zen_settings = {'indentation' : '    ',}
-
-" quick run
+" QuickRun
 noremap <silent> <C-c><C-r> :QuickRun<CR>
 
-" -------------------
-" 関数の定義
-" -------------------
-:com! Kwbd let kwbd_bn=bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
-
-" 自動更新
-function! NewUpdate()
-   let time = strftime("%H", localtime())
-   exe "set backupext=.".time
-   if expand('%') =~ g:svbfre && !&readonly && &buftype == ''
-      silent! update
-   endif
+" alice.vim
+function! s:URLEncode()
+    let l:line = getline('.')
+    let l:encoded = AL_urlencode(l:line)
+    call setline('.', l:encoded)
 endfunction
-
-" encoding
-command! Cp932 edit ++enc=cp932
-command! Eucjp edit ++enc=euc-jp
-command! Iso2022jp edit ++enc=iso-2022-jp
-command! UTF8 edit ++enc=utf-8
-command! Jis Iso2022jp
-command! Sjis Cp932
-
-" cd
-command! -complete=customlist,CompleteCD -nargs=? CD cd <args>
-function! CompleteCD(arglead, cmdline, cursorpos)
-    let pattern = join(split(a:cmdline, '\s', !0)[1:], ' ') . '*/'
-    return split(globpath(&cdpath, pattern), "\n")
+function! s:URLDecode()
+    let l:line = getline('.')
+    let l:encoded = AL_urldecode(l:line)
+    call setline('.', l:encoded)
 endfunction
-cnoreabbrev <expr> cd (getcmdtype() == ':' && getcmdline() ==# 'cd') ? 'CD' : 'cd'
+command! -nargs=0 -range URLEncode :<line1>,<line2>call <SID>URLEncode()
+command! -nargs=0 -range URLDecode :<line1>,<line2>call <SID>URLDecode()
+
+" vim-funlib
+function! Random(a, b)
+    return random#randint(a:a, a:b)
+endfunction
+function! MD5(data)
+    return hashlib#md5(a:data)
+endfunction
+function! Sha1(data)
+    return hashlib#sha1(a:data)
+endfunction
+function! Sha256(data)
+    return hashlib#sha256(a:data)
+endfunction
