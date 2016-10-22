@@ -1,0 +1,31 @@
+# ~/.screenrc
+#################################################
+# 日本語設定
+defencoding utf-8
+
+#################################################
+# 一般設定
+escape ^z^z
+vbell off
+bind -k kb stuff \010
+startup_message off
+autodetach on
+defscrollback 5000
+
+#################################################
+# ステータスライン
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+#hardstatus ignore "%w | %h"
+
+#################################################
+# ウィンドウ分割設定
+bind -c REGION 2 split
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+bind -c REGION ^ resize
+bind x command -c REGION
+
+#################################################
+# キーコンフィグ
+bind ^x # kill C-z C-x

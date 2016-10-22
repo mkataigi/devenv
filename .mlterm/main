@@ -1,0 +1,21 @@
+#############################
+# font 関連
+#############################
+line_space = 3
+#fontsize = 15
+#use_variable_column_width = false
+#use_anti_alias = true
+#not_use_unicode_font = true
+#############################
+# スクロールバー 関連
+#############################
+use_scrollbar = true
+scrollbar_mode = right
+#scrollbar_view_name = simple
+#sb_bg_color = black
+#sb_fg_color = gray
+#############################
+# 端末色 関係
+#############################
+fg_color = white
+bg_color = black
