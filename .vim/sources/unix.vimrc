@@ -1,2 +1,0 @@
-" Unix
-" Max OS

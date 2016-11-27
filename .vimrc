@@ -298,26 +298,28 @@ inoremap <silent> <expr> ,t (exists('#AutoComplPopGlobalAutoCommand#InsertEnter'
 " Vundle
 " -------------------
 set nocompatible
-filetype off
+filetype plugin indent off
+set runtimepath+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle'))
 
-set rtp+=~/.vim/vundle/
-call vundle#rc('~/.vim/bundle')
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'Shougo/unite.vim'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'thinca/vim-quickrun'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'msanders/snipmate.vim'
-Bundle 'ynkdir/vim-funlib'
-Bundle 'L9'
-Bundle 'AutoComplPop'
-Bundle 'FuzzyFinder'
-Bundle 'YankRing.vim'
-Bundle 'yanktmp.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'fholgado/minibufexpl.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'msanders/snipmate.vim'
+NeoBundle 'ynkdir/vim-funlib'
+NeoBundle 'L9'
+NeoBundle 'AutoComplPop'
+NeoBundle 'FuzzyFinder'
+NeoBundle 'YankRing.vim'
+NeoBundle 'yanktmp.vim'
 
+call neobundle#end()
 filetype plugin indent on
 
 " -------------------
