@@ -1,0 +1,44 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplcache'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'fholgado/minibufexpl.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'msanders/snipmate.vim'
+
+[[plugins]]
+repo = 'ynkdir/vim-funlib'
+
+[[plugins]]
+repo = 'L9'
+
+[[plugins]]
+repo = 'AutoComplPop'
+
+[[plugins]]
+repo = 'FuzzyFinder'
+
+[[plugins]]
+repo = 'YankRing.vim'
+
+[[plugins]]
+repo = 'yanktmp.vim'

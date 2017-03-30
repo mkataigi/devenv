@@ -1,18 +1,3 @@
-"  -------------------
-" init
-" -------------------
-source $HOME/.vim/sources/functions.vimrc
-if has("unix")
-    source $HOME/.vim/sources/unix.vimrc
-elseif has("linux")
-    source $HOME/.vim/sources/linux.vimrc
-endif
-if version >= 700
-    source $HOME/.vim/sources/newvim.vimrc
-else
-    source $HOME/.vim/sources/oldvim.vimrc
-endif
-
 " -------------------
 " View
 " -------------------
@@ -21,16 +6,13 @@ set modeline
 set number       "行番号表示
 set ruler        "ルーラー表示
 set title        "ウィンドウタイトルを変更
-"set visualbell   "visual bellの使用
 set scrolloff=5
 
 " -------------------
 " Language
 " -------------------
 set encoding=utf-8
-"set encoding=euc-jp
 set termencoding=utf-8
-"set termencoding=eud-jp
 set fileencoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,cp932
 set fileformat=unix
@@ -79,7 +61,6 @@ set smartindent
 " -------------------
 set wildmenu
 set wildmode=full:list
-"set completeopt=menu,preview,menuone
 
 " -------------------
 " Programming
@@ -94,12 +75,6 @@ augroup grepopen
 augroup END
 
 " -------------------
-" Mouse
-" -------------------
-"set mouse=a
-"set ttymouse=xterm2
-
-" -------------------
 " Backup
 " -------------------
 set autowrite " ファイル切替時に自動保存
@@ -109,7 +84,6 @@ set backupdir=$HOME/.vimback "バックアップディレクトリ
 set directory=$HOME/.vimtmp
 set history=10000  "ヒストリ件数
 set updatetime=500
-"set viminfo="" ".viminfoファイルの設定
 let g:svbfre = '.\+'
 augroup CursorHold
     autocmd!
@@ -147,7 +121,6 @@ set dictionary=/usr/share/dict/words
 syntax on "シンタックスハイライト
 augroup syntax
     autocmd!
-"    autocmd FileType perl call PerlType()
 augroup END
 filetype indent on "ファイルタイプによるインデントを行う
 filetype plugin on "ファイルタイプによるプラグインを使う
@@ -210,8 +183,6 @@ noremap <Silent> <S-<> <C-w><
 noremap <Silent> <C-[> <C-t>
 noremap <Silent> <C-]> <C-]>
 noremap ,a :abbreviate<Space>
-"noremap a iabbrev
-"noremap a cabbrev
 
 noremap <C-c>pp :set paste<CR>:set nonumber<CR>:set nolist<CR>
 noremap <C-c>pn :set nopaste<CR>:set number<CR>:set list<CR>
@@ -239,9 +210,6 @@ noremap <silent> bq :Kwbd<CR>
 noremap tt :tabnew .
 noremap <silent> tn :tabn<CR>
 noremap <silent> tp :tabp<CR>
-"noremap x :tabfirst<CR>
-"noremap x :tablast<CR>
-"noremap x :tabm
 noremap <C-t>t :tabdo<Space>
 
 " window
@@ -249,10 +217,6 @@ noremap <C-w><C-w> <C-w>
 noremap <Silent> <C-w>n :new<CR>
 noremap <Silent> <C-w>v :vnew<CR>
 noremap <Silent> <C-w>q :quit<CR>
-"noremap <C-w>j <C-w>j
-"noremap <C-w>k <C-w>k
-"noremap <C-w>h <C-w>h
-"noremap <C-w>l <C-w>l
 noremap <silent> <C-w>- <C-w>-
 noremap <Silent> <C-w>= <C-w>+
 noremap <Silent> <C-w>, <C-w><
@@ -282,8 +246,6 @@ noremap <C-]><C-w> <C-w>}
 noremap <C-[><C-w> <C-w><C-x>
 
 " undo
-"noremap g+ g+
-"noremap g- g-
 noremap gl :undolist<CR>
 noremap ge :undo NODE_NUMBER<CR>
 
@@ -295,40 +257,40 @@ inoremap <silent> <expr> ,t (exists('#AutoComplPopGlobalAutoCommand#InsertEnter'
 
 
 " -------------------
-" Vundle
+" Plugins
 " -------------------
-set nocompatible
-filetype plugin indent off
-set runtimepath+=~/.vim/bundle/neobundle.vim
-call neobundle#begin(expand('~/.vim/bundle'))
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+endif
 
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'fholgado/minibufexpl.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'msanders/snipmate.vim'
-NeoBundle 'ynkdir/vim-funlib'
-NeoBundle 'L9'
-NeoBundle 'AutoComplPop'
-NeoBundle 'FuzzyFinder'
-NeoBundle 'YankRing.vim'
-NeoBundle 'yanktmp.vim'
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-call neobundle#end()
-filetype plugin indent on
+  let g:rc_dir    = expand('~/.vim/rc')
+  let s:toml      = g:rc_dir . '/dein.toml'
+  let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+  call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+if dein#check_install()
+  call dein#install()
+endif
+
 
 " -------------------
 " Plugins Configurations
 " -------------------
-" Pathogen
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
 " minibufexpl
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1

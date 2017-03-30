@@ -84,7 +84,6 @@ fi
 ###################
 autoload bashcompinit
 bashcompinit
-source ~/repos/github/git/contrib/completion/git-completion.bash
 
 ###################
 # エイリアス
@@ -103,7 +102,7 @@ alias -g C="LANG=C"
 alias where="command -v"
 alias j="jobs -l"
 alias vi="vim"
-alias sc"screen -r"
+alias sc="screen -r"
 alias screen="screen -xR"
 alias cp="cp -p"
 alias la="ls -aF"
@@ -113,17 +112,15 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 alias less="less --tabs=4"
+
 alias tailf="tail -f"
 alias tailfn="tail -fn"
-alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 
-alias mkctags="ctags -f '.tags' -R"
-alias lsctags="ctags --list-maps"
 alias rpma="rpm -qal"
 alias rpmf="rpm -qf"
 
 alias svi="sudo vi"
-alias sless+"sudo less"
+alias sless="sudo less"
 
 alias vizrc="vi ~/.zshrc"
 alias vizen="vi ~/.zshenv"

@@ -2,58 +2,55 @@
 # 基本
 ###################
 export LANG=ja_JP.UTF-8
-#export LANG=ja_JP.eucJP
 
 export BLOCKSIZE=M
 export EDITOR=vi
 export PAGER=less
 export MANPEGER=less
+export RSYNC_RSH=ssh
 
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
-
 export VIMHOME=$HOME/.vim
-export RSYNC_RSH=ssh
-#compdef mosh=ssh
 
 ###################
 # プログラム環境
 ###################
 # CVS
-#export CVS_ROOT=
 export CVS_RSH=ssh
 export CVS_SSH=ssh
 export CVSEDITOR=vim
 # SVN
-#export SVN_ROOT=
 export SVN_SSH=ssh
 export SVN_EDITOR=vim
 
-
 case `uname` in
-Darwin)
 ###################
 # Mac
 ###################
+Darwin)
     # HomeBrew
     export BREWHOME=/usr/local
-    export PYTHONPATH=
-    export PYTHONPATH=$BREWHOME/Cellar/python/2.7.2/lib/python2.7/site-packages:$PYTHONPATH
-    export PYTHONPATH=$BREWHOME/Cellar/python/2.7.3/lib/python2.7/site-packages:$PYTHONPATH
 
     # Xcode
     export IP_XCODE=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks
     export MAC_XCODE=/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks
 
     # Perl
-    [[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
+    if [ -s $HOME/perl5/perlbrew/etc/bashrc ]; then
+        source $HOME/perl5/perlbrew/etc/bashrc
+    fi
+
     # Python
-    [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-    [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-    [[ -s `which virtualenvwrapper.sh` ]] && source `which virtualenvwrapper.sh`
+    if [ -s $HOME/.pythonz/etc/bashrc ]; then
+        source $HOME/.pythonz/etc/bashrc
+    fi
+    if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+        export WORKON_HOME=$HOME/.virtualenvs
+        source /usr/local/bin/virtualenvwrapper.sh
+    fi
+
     # Ruby
     export rvm_path=/usr/local/rvm
     [[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
@@ -65,18 +62,25 @@ Darwin)
         export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     fi
 
+    # Node.js
+    if [[ -s /usr/local/opt/nvm/nvm.sh ]]; then
+        export NVM_DIR="$HOME/.nvm"
+        source /usr/local/opt/nvm/nvm.sh
+    fi
     ;;
-Linux)
 ###################
 # Linux
 ###################
+Linux)
     # Perl
     export PERL_BADLANG=0
+
     # C and C plus
     export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/:/usr/local/lib/
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/lib/:/usr/local/lib/
     export C_INCLUDE_PATH=$C_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
     export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
+
     # Java
     export JAVA_HOME=/usr/lib/jvm/java-6-sun
     export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
@@ -85,10 +89,22 @@ Linux)
     export PATH=$PATH:$JAVA_HOME/bin
     # Perl
     export PERL5LIB=$PERL5LIB:/usr/lib/perl5/5.10.1
+
     # Ruby
+    #
     ;;
 esac
 
+#######################
+# Other Environment
+#######################
+### Added by the Heroku Toolbelt
+if [ -d '/usr/local/heroku/bin' ]; then export PATH="/usr/local/heroku/bin:$PATH"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mkataigi/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/mkataigi/google-cloud-sdk/path.zsh.inc'; fi
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mkataigi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/mkataigi/google-cloud-sdk/completion.zsh.inc'; fi
 
 ##########################
 # terminal configuration
@@ -123,8 +139,7 @@ kterm*|xterm*)
     }
     export LSCOLORS=exfxcxdxbxegedabagacad
     export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors \
-        'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
     ;;
 screen)
     chpwd () { echo -n "_`dirs`\\" }
@@ -138,7 +153,7 @@ screen)
                     cmd=(builtin jobs -l $cmd[2])
                 fi
                 ;;
-            %*) 
+            %*)
                 cmd=(builtin jobs -l $cmd[1])
                 ;;
             cd)
