@@ -1,6 +1,7 @@
 [user]
     email = mkataigi@gmail.com
 	name = Makoto Kataigi
+	signingkey = 5BC521DA
 [color]
     ui = auto
     branch = auto
@@ -54,3 +55,5 @@
     add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
     gr = grep
     gn = grep -n
+[gpg]
+	program = gpg2
