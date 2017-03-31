@@ -38,10 +38,9 @@ RUN /bin/echo -e "LANG=\"ja_JP.UTF-8\"" > /etc/default/local
 
 # add user
 ARG userpasswd="userpassword"
-RUN useradd -m mkataigi -g users
+RUN useradd -m mkataigi -g users -s /bin/zsh
 RUN echo 'mkataigi:$userpasswd' | chpasswd
 RUN echo "mkataigi ALL=(ALL) ALL" >> /etc/sudoers
-RUN chsh -s /bin/zsh mkataigi
 
 ADD id_rsa_app /home/mkataigi/id_rsa_app
 ADD id_rsa.pub /home/mkataigi/id_rsa.pub
