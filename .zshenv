@@ -33,6 +33,11 @@ Darwin)
     # HomeBrew
     export BREWHOME=/usr/local
 
+    # Shell
+    if [ -f /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+        source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    fi
+
     # Xcode
     export IP_XCODE=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks
     export MAC_XCODE=/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks
@@ -46,9 +51,15 @@ Darwin)
     if [ -s $HOME/.pythonz/etc/bashrc ]; then
         source $HOME/.pythonz/etc/bashrc
     fi
+    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
     if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
         export WORKON_HOME=$HOME/.virtualenvs
         source /usr/local/bin/virtualenvwrapper.sh
+    fi
+    export PYENV_ROOT=$HOME/.pyenv
+    if [[ -x `which pyenv` ]]; then
+        export PATH=$PYENV_ROOT/bin:$PATH
+        eval "$(pyenv init -)"
     fi
 
     # Ruby
@@ -56,16 +67,16 @@ Darwin)
     [[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
 
     # Go lang
-    if [ -x `which go` ]; then
+    export GOPATH=$HOME/code/go-local
+    if [[ -x `which go` ]]; then
         export GOROOT=`go env GOROOT`
-        export GOPATH=$HOME/code/go-local
         export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     fi
 
     # Node.js
-    if [[ -s /usr/local/opt/nvm/nvm.sh ]]; then
-        export NVM_DIR="$HOME/.nvm"
-        source /usr/local/opt/nvm/nvm.sh
+    export NVM_DIR="$HOME/.nvm"
+    if [ -s $(/usr/local/bin/brew --prefix nvm)/nvm.sh ]; then
+        source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
     fi
     ;;
 ###################
@@ -174,3 +185,7 @@ screen)
     chpwd
     ;;
 esac
+
+for config in `ls '$HOME/.zshenv.*' 2> /dev/null`; do
+    source $config
+done
