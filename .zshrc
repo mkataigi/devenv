@@ -56,6 +56,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups
 setopt share_history
+setopt EXTENDED_HISTORY
 export WORDCHARS='*?[]~=&;!#$%^(){}<>'
 
 ###################
@@ -69,15 +70,14 @@ autoload zed
 # 検索機能
 ###################
 autoload history-search-end
-zle -N history-beginning-search-backword-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-if is-at-least 4.3.10; then
-  bindkey '^R' history-incremental-pattern-search-backward
-  bindkey '^S' history-incremental-pattern-search-forward
-else
-  bindkey '^R' history-beginning-search-backward-end
-  bindkey '^S' history-beginning-search-forward-end
-fi
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 ###################
 # git completion

@@ -1,7 +1,7 @@
 [user]
     email = mkataigi@gmail.com
-	name = Makoto Kataigi
-	signingkey = 5BC521DA
+    name = Makoto Kataigi
+    signingkey = 5BC521DA
 [color]
     ui = auto
     branch = auto
@@ -56,4 +56,4 @@
     gr = grep
     gn = grep -n
 [gpg]
-	program = gpg2
+    program = gpg2

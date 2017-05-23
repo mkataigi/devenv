@@ -30,8 +30,8 @@ set hlsearch   "検索結果をハイライト
 " -------------------
 " Tab Char
 " -------------------
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set softtabstop=0
 set expandtab
 

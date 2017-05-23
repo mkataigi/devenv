@@ -78,6 +78,9 @@ Darwin)
     if [ -s $(/usr/local/bin/brew --prefix nvm)/nvm.sh ]; then
         source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
     fi
+
+    # direnv
+    eval "$(/usr/local/bin/direnv hook zsh)"
     ;;
 ###################
 # Linux
