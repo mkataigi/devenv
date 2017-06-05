@@ -93,8 +93,7 @@ alias -g L="|less"
 alias -g LS="|less -S"
 alias -g H="|head"
 alias -g T="|tail"
-alias -g TF="|tail -fn 100"
-alias -g TFN="|tail -fn"
+alias -g TF="|tail -f"
 alias -g S="|sort"
 alias -g W="|wc -l"
 alias -g C="LANG=C"
@@ -102,16 +101,9 @@ alias -g C="LANG=C"
 alias where="command -v"
 alias j="jobs -l"
 alias vi="vim"
-alias sc="screen -r"
-alias screen="screen -xR"
-alias cp="cp -p"
 alias la="ls -aF"
 alias ll="ls -la"
 alias lh="ls -lahF"
-alias du="du -h"
-alias df="df -h"
-alias su="su -l"
-alias less="less --tabs=4"
 
 alias tailf="tail -f"
 alias tailfn="tail -fn"
@@ -128,9 +120,14 @@ alias srzrc="source ~/.zshrc"
 alias srzen="source ~/.zshenv"
 alias vivimrc="vi ~/.vimrc"
 
+alias sc="screen -r"
+alias screen="screen -xR"
 alias tn="tmux new -s"
 alias ta="tmux add -t"
 alias tl="tmux ls"
+
+alias gp="git push origin `git branch | grep '*' | sed -e 's/* //g'`"
+alias gs="git status"
 
 alias cpan-installed="find `perl -e 'print \"@INC\"'` -name '*.pm' -print"
 alias cpan-uninstall='perl -MConfig -MExtUtils::Install -e '"'"'($FULLEXT=shift)=~s{-}{/}g;uninstall "$Config{sitearchexp}/auto/$FULLEXT/.packlist",1'"'"
@@ -231,6 +228,9 @@ function precmd () {
 
 ####################
 # git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () {

@@ -25,9 +25,70 @@ export CVSEDITOR=vim
 export SVN_SSH=ssh
 export SVN_EDITOR=vim
 
+###################
+# Env Common
+###################
+# C and C plus
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/:/usr/local/lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/lib/:/usr/local/lib/
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
+export MANPATH=$MANPATH:$JAVA_HOME/man
+export CATALINA_HOME=/usr/share/tomcat5.5
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Perl
+export PERL5LIB=$PERL5LIB:/usr/lib/perl5/5.10.1
+if [ -s $HOME/perl5/perlbrew/etc/bashrc ]; then
+    source $HOME/perl5/perlbrew/etc/bashrc
+fi
+
+# Python
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+export PYENV_ROOT=$HOME/.pyenv
+if [[ -x `which pyenv` ]]; then
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+fi
+if [ -s $HOME/.pythonz/etc/bashrc ]; then
+    source $HOME/.pythonz/etc/bashrc
+fi
+
+# Ruby
+export rvm_path=/usr/local/rvm
+[[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
+if [[ -d ~/.rbenv  ]]; then
+  export PATH=${HOME}/.rbenv/bin:${PATH}
+  eval "$(/usr/local/bin/rbenv init -)"
+fi
+
+# Go lang
+export GOPATH=$HOME/code/go-local
+if [[ -x `which go` ]]; then
+    export GOROOT=`go env GOROOT`
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+fi
+
+# Node.js
+export NVM_DIR="$HOME/.nvm"
+if [ -s $(/usr/local/bin/brew --prefix nvm)/nvm.sh ]; then
+    source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
+fi
+
+# direnv
+eval "$(/usr/local/bin/direnv hook zsh)"
+
 case `uname` in
 ###################
-# Mac
+# Env Mac
 ###################
 Darwin)
     # HomeBrew
@@ -42,70 +103,14 @@ Darwin)
     export IP_XCODE=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk/System/Library/Frameworks
     export MAC_XCODE=/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks
 
-    # Perl
-    if [ -s $HOME/perl5/perlbrew/etc/bashrc ]; then
-        source $HOME/perl5/perlbrew/etc/bashrc
-    fi
-
-    # Python
-    if [ -s $HOME/.pythonz/etc/bashrc ]; then
-        source $HOME/.pythonz/etc/bashrc
-    fi
-    VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-    if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-        export WORKON_HOME=$HOME/.virtualenvs
-        source /usr/local/bin/virtualenvwrapper.sh
-    fi
-    export PYENV_ROOT=$HOME/.pyenv
-    if [[ -x `which pyenv` ]]; then
-        export PATH=$PYENV_ROOT/bin:$PATH
-        eval "$(pyenv init -)"
-    fi
-
-    # Ruby
-    export rvm_path=/usr/local/rvm
-    [[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
-
-    # Go lang
-    export GOPATH=$HOME/code/go-local
-    if [[ -x `which go` ]]; then
-        export GOROOT=`go env GOROOT`
-        export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-    fi
-
-    # Node.js
-    export NVM_DIR="$HOME/.nvm"
-    if [ -s $(/usr/local/bin/brew --prefix nvm)/nvm.sh ]; then
-        source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
-    fi
-
-    # direnv
-    eval "$(/usr/local/bin/direnv hook zsh)"
     ;;
 ###################
-# Linux
+# Env Linux
 ###################
 Linux)
     # Perl
     export PERL_BADLANG=0
 
-    # C and C plus
-    export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/:/usr/local/lib/
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/lib/:/usr/local/lib/
-    export C_INCLUDE_PATH=$C_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
-    export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
-
-    # Java
-    export JAVA_HOME=/usr/lib/jvm/java-6-sun
-    export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
-    export MANPATH=$MANPATH:$JAVA_HOME/man
-    export CATALINA_HOME=/usr/share/tomcat5.5
-    export PATH=$PATH:$JAVA_HOME/bin
-    # Perl
-    export PERL5LIB=$PERL5LIB:/usr/lib/perl5/5.10.1
-
-    # Ruby
-    #
     ;;
 esac
 
