@@ -126,7 +126,7 @@ alias tn="tmux new -s"
 alias ta="tmux add -t"
 alias tl="tmux ls"
 
-alias gp="git push origin `git branch | grep '*' | sed -e 's/* //g'`"
+alias gp="git push origin \`git branch | grep '*' | sed -e 's/* //g'\`"
 alias gs="git status"
 
 alias cpan-installed="find `perl -e 'print \"@INC\"'` -name '*.pm' -print"

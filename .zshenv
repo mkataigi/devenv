@@ -35,11 +35,10 @@ export C_INCLUDE_PATH=$C_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-6-sun
-export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
-export MANPATH=$MANPATH:$JAVA_HOME/man
-export CATALINA_HOME=/usr/share/tomcat5.5
-export PATH=$PATH:$JAVA_HOME/bin
+#export JAVA_HOME=
+#export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
+#export MANPATH=$MANPATH:$JAVA_HOME/man
+#export PATH=$PATH:$JAVA_HOME/bin
 
 # Perl
 export PERL5LIB=$PERL5LIB:/usr/lib/perl5/5.10.1
