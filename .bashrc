@@ -1,33 +1,6 @@
 # ~/.bashrc
 #############################
 
-set_shell() {
-    if [ -x /usr/local/bin/zsh ]; then
-        exec /usr/local/bin/zsh -l
-    elif [ -x /bin/zsh ]; then
-        exec /bin/zsh -l
-    fi
-}
-
-case "$TERM" in
-xterm*)
-    case `uname` in
-    Darwin*) set_shell ;;
-    Linux*) set_shell ;;
-    *) ;;
-    esac
-;;
-screen*)
-    case `uname` in
-    Darwin*) set_shell ;;
-    Linux*) set_shell ;;
-    *) ;;
-    esac
-;;
-*)
-;;
-esac
-
 # 基本設定
 # 言語
 export LANG=ja_JP.UTF-8

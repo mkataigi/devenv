@@ -129,6 +129,8 @@ alias tl="tmux ls"
 alias gp="git push origin \`git branch | grep '*' | sed -e 's/* //g'\`"
 alias gs="git status"
 
+alias grepn="grep -r --exclude-dir node_modules --exclude-dir .git"
+
 alias cpan-installed="find `perl -e 'print \"@INC\"'` -name '*.pm' -print"
 alias cpan-uninstall='perl -MConfig -MExtUtils::Install -e '"'"'($FULLEXT=shift)=~s{-}{/}g;uninstall "$Config{sitearchexp}/auto/$FULLEXT/.packlist",1'"'"
 alias cpan-x86="ARCHFLAGS='-arch x86_64 -arch i386 -arch ppc' cpan"
