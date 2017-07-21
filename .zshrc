@@ -303,6 +303,7 @@ function show_ls_gitstatus() {
 zle -N show_ls_gitstatus
 alias l=show_ls_gitstatus
 
-for config in `ls '$HOME/.zshrc.*' 2> /dev/null`; do
+for config in `ls $HOME/.zshrc.* 2> /dev/null`; do
+    echo "loading $config"
     source $config
 done
