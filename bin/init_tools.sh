@@ -5,7 +5,9 @@ usage_exit() {
     exit 1
 }
 
-CWD=$(cd $(dirname $0);cd ..;pwd)
+if [ "x$CWD" = "x" ]; then
+  CWD=$(cd $(dirname $0);cd ..;pwd)
+fi
 
 FORCE_FLAG=0
 

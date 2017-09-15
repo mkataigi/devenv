@@ -1,8 +1,8 @@
 #!/bin/sh
 
-CWD=$(cd $(dirname $0);pwd)
+CWD=$(cd $(dirname $0);cd ..;pwd)
 
-source ${CWD}/init_tools.sh
+source ${CWD}/bin/init_tools.sh
 
 
 make_link ".bash_profile"
