@@ -47,11 +47,6 @@ if [ -s $HOME/perl5/perlbrew/etc/bashrc ]; then
 fi
 
 # Python
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
 export PYENV_ROOT=$HOME/.pyenv
 if [[ -x `which pyenv` ]]; then
     export PATH=$PYENV_ROOT/bin:$PATH
