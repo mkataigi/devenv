@@ -35,8 +35,8 @@ export C_INCLUDE_PATH=$C_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
 export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include/
 
 # Java
-#export JAVA_HOME=
-#export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
+export JAVA_HOME=
+export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
 #export MANPATH=$MANPATH:$JAVA_HOME/man
 #export PATH=$PATH:$JAVA_HOME/bin
 
@@ -51,17 +51,23 @@ export PYENV_ROOT=$HOME/.pyenv
 if [[ -x `which pyenv` ]]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 if [ -s $HOME/.pythonz/etc/bashrc ]; then
     source $HOME/.pythonz/etc/bashrc
+fi
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    export WORKON_HOME=$HOME/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Ruby
 export rvm_path=/usr/local/rvm
 [[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
 if [[ -d ~/.rbenv  ]]; then
-  export PATH=${HOME}/.rbenv/bin:${PATH}
-  eval "$(/usr/local/bin/rbenv init -)"
+    export PATH=${HOME}/.rbenv/bin:${PATH}
+    eval "$(/usr/local/bin/rbenv init -)"
 fi
 
 # Go lang
