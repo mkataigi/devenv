@@ -1,0 +1,42 @@
+// 既定の設定を上書きするには、このファイル内に設定を挿入します
+{
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreview": false,
+
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.insertSpaces": true,
+
+    "sync.gist": "7f97e5eb1c21f756a11d077f451e7846",
+    "sync.lastUpload": "2017-07-20T07:34:28.842Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.anonymousGist": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "typescript.check.npmIsInstalled": false,
+    "editor.minimap.enabled": true,
+    "editor.tabCompletion": true,
+    "editor.quickSuggestionsDelay": 300,
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true
+    },
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "git.autofetch": true
+}

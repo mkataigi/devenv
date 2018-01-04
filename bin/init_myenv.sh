@@ -21,5 +21,7 @@ make_link ".emacs"
 make_link ".ssh/config"
 make_link "bin"
 
+make_link "Code/User/settings.json" $HOME'/Library/Application Support'
+
 make_dir ".vimback"
 make_dir ".vimtmp"
