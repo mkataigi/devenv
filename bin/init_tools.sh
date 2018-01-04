@@ -24,35 +24,45 @@ shift $((OPTIND - 1))
 
 make_link() {
     name=$1
-    dir=$CWD
+    todir=$2
+    fromdir=$CWD
     force=$FORCE_FLAG
 
-    if [ -d "$dir/$name" -o -f "$dir/$name" -o -L "$dir/$name" ]; then
-        if [ -d "$HOME/$name" -o -f "$HOME/$name" -o -L "$HOME/$name" ]; then
+    if [ "x$todir" = "x" ]; then
+      todir=$HOME
+    fi
+
+    if [ -d "$fromdir/$name" -o -f "$fromdir/$name" -o -L "$fromdir/$name" ]; then
+        if [ -d "$todir/$name" -o -f "$todir/$name" -o -L "$todir/$name" ]; then
             if [ $force -eq 1 ]; then
-                echo "rm -fr $HOME/$name"
-                rm -fr $HOME/$name
+                echo "rm -fr $todir/$name"
+                rm -fr $todir/$name
             else
-                echo "exists $HOME/$name"
+                echo "exists $todir/$name"
                 return 0
             fi
         fi
 
-        echo "ln -s $dir/$name $HOME/$name"
-        ln -s $dir/$name $HOME/$name
+        echo "ln -s $fromdir/$name $todir/$name"
+        ln -s "$fromdir/$name" "$todir/$name"
     else
-        echo "not found $dir/$name"
+        echo "not found $fromdir/$name"
     fi
 }
 
 make_dir() {
     name=$1
+    dir=$2
 
-    if [ ! -e $HOME/$name ]; then
-        echo "mkdir $HOME/$name"
-        mkdir $HOME/$name
+    if [ "x$dir" = "x" ]; then
+      dir=$HOME
+    fi
+
+    if [ ! -e $dir/$name ]; then
+        echo "mkdir $dir/$name"
+        mkdir $dir/$name
     else
-        echo "exists $HOME/$name"
+        echo "exists $dir/$name"
     fi
 }
 
