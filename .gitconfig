@@ -71,3 +71,6 @@
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [credential]
 	helper = osxkeychain
+[pager]
+	status = false
+	branch = false
