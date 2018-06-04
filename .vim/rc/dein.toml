@@ -29,16 +29,16 @@ repo = 'msanders/snipmate.vim'
 repo = 'ynkdir/vim-funlib'
 
 [[plugins]]
-repo = 'L9'
+repo = 'vim-scripts/L9'
 
 [[plugins]]
-repo = 'AutoComplPop'
+repo = 'vim-scripts/AutoComplPop'
 
 [[plugins]]
-repo = 'FuzzyFinder'
+repo = 'vim-scripts/FuzzyFinder'
 
 [[plugins]]
-repo = 'YankRing.vim'
+repo = 'vim-scripts/YankRing.vim'
 
 [[plugins]]
-repo = 'yanktmp.vim'
+repo = 'vim-scripts/yanktmp.vim'
