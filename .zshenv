@@ -9,6 +9,8 @@ export PAGER=less
 export MANPEGER=less
 export RSYNC_RSH=ssh
 
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
