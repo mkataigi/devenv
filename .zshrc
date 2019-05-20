@@ -129,6 +129,12 @@ alias tl="tmux ls"
 alias gp="git push origin \`git branch | grep '*' | sed -e 's/* //g'\`"
 alias gs="git status"
 
+alias dcdown="docker-compose down"
+alias dcup="docker-compose up -d"
+alias dclogs="docker-compose logs -f"
+alias dcexec="docker-compose exec"
+alias dcps="docker-compose ps"
+
 alias grepn="grep -r --exclude-dir node_modules --exclude-dir .git"
 
 alias cpan-installed="find `perl -e 'print \"@INC\"'` -name '*.pm' -print"
