@@ -15,8 +15,6 @@
 	autocrlf = input # CRLFを自動変換
 [marge]
 	tool = vimdiff
-[push]
-	default = tracking
 [alias]
 	st = status
 	sh = show
