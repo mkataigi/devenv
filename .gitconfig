@@ -53,6 +53,7 @@
 	add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 	gr = grep
 	gn = grep -n
+	showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $2...$1 | grep 'Merge pull request #' | head -n 1; }; f"
 [gpg]
 	program = gpg2
 [filter "lfs"]
