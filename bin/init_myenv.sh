@@ -18,6 +18,7 @@ make_link ".tmux.conf"
 make_link ".vimrc"
 make_link ".vim"
 make_link ".emacs"
+make_link ".rgignore"
 make_link ".ssh/config"
 make_link "bin"
 

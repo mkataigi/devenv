@@ -1,0 +1,16 @@
+node_modules/
+.git/
+build/
+ace-builds-*/
+src/public/libs/
+.cache-loader/
+app.js
+build.js
+vendors.js
+build.*.js
+*-preminify.js
+*.production.js
+*.min.js
+*_min.js
+*.st.js
+*.js.map
