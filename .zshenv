@@ -196,6 +196,6 @@ screen)
     ;;
 esac
 
-for config in `ls '$HOME/.zshenv.*' 2> /dev/null`; do
+for config in `ls $HOME/.zshenv.* 2> /dev/null`; do
     source $config
 done
