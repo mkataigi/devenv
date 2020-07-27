@@ -50,7 +50,7 @@ fi
 
 # Python
 export PYENV_ROOT=$HOME/.pyenv
-if [[ -x `which pyenv` ]]; then
+if [[ -n `which pyenv` ]]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
