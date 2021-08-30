@@ -85,6 +85,8 @@ bindkey '^R' peco-history-selection
 autoload bashcompinit
 bashcompinit
 
+eval "$(jump shell)"
+
 ###################
 # エイリアス
 ###################
@@ -99,7 +101,6 @@ alias -g W="|wc -l"
 alias -g C="LANG=C"
 
 alias where="command -v"
-alias j="jobs -l"
 alias vi="vim"
 alias la="ls -aF"
 alias ll="ls -la"
