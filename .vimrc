@@ -1,3 +1,8 @@
+" ===================
+" initialize
+" /bin/bash -c $(curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh) ~/.cache/dein
+" :call dein#install()
+" ===================
 " -------------------
 " View
 " -------------------
@@ -85,10 +90,10 @@ set directory=$HOME/.vimtmp
 set history=10000  "ヒストリ件数
 set updatetime=500
 let g:svbfre = '.\+'
-augroup CursorHold
-    autocmd!
-    autocmd CursorHold * call NewUpdate()
-augroup END
+"augroup CursorHold
+"    autocmd!
+"    autocmd CursorHold * call NewUpdate()
+"augroup END
 
 " -------------------
 " Status Line

@@ -26,7 +26,7 @@ autoload -Uz is-at-least
 autoload -Uz vcs_info
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ###################
 # キー設定
@@ -91,61 +91,24 @@ eval "$(jump shell)"
 # エイリアス
 ###################
 alias -g G="|grep"
-alias -g L="|less"
-alias -g LS="|less -S"
+alias -g L="|less -S"
 alias -g H="|head"
-alias -g T="|tail"
-alias -g TF="|tail -f"
+alias -g T="|tail -f"
 alias -g S="|sort"
 alias -g W="|wc -l"
 alias -g C="LANG=C"
 
 alias where="command -v"
 alias vi="vim"
-alias la="ls -aF"
 alias ll="ls -la"
-alias lh="ls -lahF"
 
 alias tailf="tail -f"
-alias tailfn="tail -fn"
-
-alias rpma="rpm -qal"
-alias rpmf="rpm -qf"
-
-alias svi="sudo vi"
-alias sless="sudo less"
-
-alias vizrc="vi ~/.zshrc"
-alias vizen="vi ~/.zshenv"
-alias srzrc="source ~/.zshrc"
-alias srzen="source ~/.zshenv"
-alias vivimrc="vi ~/.vimrc"
-
-alias sc="screen -r"
-alias screen="screen -xR"
-alias tn="tmux new -s"
-alias ta="tmux add -t"
-alias tl="tmux ls"
 
 alias gp="git push origin \`git branch | grep '*' | sed -e 's/* //g'\`"
-alias gs="git status"
-
-alias dcdown="docker-compose down"
-alias dcup="docker-compose up -d"
-alias dclogs="docker-compose logs -f"
-alias dcexec="docker-compose exec"
-alias dcps="docker-compose ps"
-
-alias grepn="grep -r --exclude-dir node_modules --exclude-dir .git"
-
-alias cpan-installed="find `perl -e 'print \"@INC\"'` -name '*.pm' -print"
-alias cpan-uninstall='perl -MConfig -MExtUtils::Install -e '"'"'($FULLEXT=shift)=~s{-}{/}g;uninstall "$Config{sitearchexp}/auto/$FULLEXT/.packlist",1'"'"
-alias cpan-x86="ARCHFLAGS='-arch x86_64 -arch i386 -arch ppc' cpan"
 
 case `uname` in
 Darwin)
     alias updatedb="sudo /usr/libexec/locate.updatedb"
-    alias mysql5_server="sudo /opt/local/share/mysql5/mysql/mysql.server"
     ;;
 Linux)
     ;;
@@ -230,7 +193,7 @@ fi
 
 ####################
 # z
-. `brew --prefix`/etc/profile.d/z.sh
+. $(brew --prefix)/etc/profile.d/z.sh
 function precmd () {
     z --add "$(pwd -P)"
 }

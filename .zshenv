@@ -10,6 +10,7 @@ export MANPEGER=less
 export RSYNC_RSH=ssh
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+eval $(/opt/homebrew/bin/brew shellenv)
 
 export LESS='-R'
 export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
@@ -51,17 +52,8 @@ fi
 # Python
 export PYENV_ROOT=$HOME/.pyenv
 if [[ -n `which pyenv` ]]; then
-    export PATH=$PYENV_ROOT/bin:$PATH
+    export PATH=$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-if [ -s $HOME/.pythonz/etc/bashrc ]; then
-    source $HOME/.pythonz/etc/bashrc
-fi
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-    export WORKON_HOME=$HOME/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Ruby
@@ -81,12 +73,12 @@ fi
 
 # Node.js
 export NVM_DIR="$HOME/.nvm"
-if [ -s $(/usr/local/bin/brew --prefix nvm)/nvm.sh ]; then
-    source $(/usr/local/bin/brew --prefix nvm)/nvm.sh
+if [ -s $(brew --prefix nvm)/nvm.sh ]; then
+    source $(brew --prefix nvm)/nvm.sh
 fi
 
 # direnv
-eval "$(/usr/local/bin/direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 case `uname` in
 ###################
