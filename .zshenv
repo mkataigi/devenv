@@ -52,12 +52,13 @@ fi
 # Python
 export PYENV_ROOT=$HOME/.pyenv
 if [[ -n `which pyenv` ]]; then
-    export PATH=$PYENV_ROOT/shims:$PATH
+    export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
 fi
 if [[ -n `which pyenv-virtualenv-init` ]]; then
-    eval "$(pyenv virtualenv-init -)";
+    eval "$(pyenv virtualenv-init -)"
 fi
+
 
 # Ruby
 export rvm_path=/usr/local/rvm
