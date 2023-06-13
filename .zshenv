@@ -55,6 +55,9 @@ if [[ -n `which pyenv` ]]; then
     export PATH=$PYENV_ROOT/shims:$PATH
     eval "$(pyenv init -)"
 fi
+if [[ -n `which pyenv-virtualenv-init` ]]; then
+    eval "$(pyenv virtualenv-init -)";
+fi
 
 # Ruby
 export rvm_path=/usr/local/rvm
@@ -191,3 +194,5 @@ esac
 for config in `ls $HOME/.zshenv.* 2> /dev/null`; do
     source $config
 done
+
+echo $PYENV_ROOT

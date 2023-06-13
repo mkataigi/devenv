@@ -213,12 +213,6 @@ precmd () {
 
 PATH=$PATH:/usr/local/rvm/bin # Add RVM to PATH for scripting
 
-####################
-# python viertualenv for Mac
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-export PYENV_ROOT=/usr/local/var/pyenv
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
 ###################
 # functions
 function ls_abbrev() {
