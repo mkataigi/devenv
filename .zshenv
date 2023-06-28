@@ -1,6 +1,3 @@
-###################
-# 基本
-###################
 export LANG=ja_JP.UTF-8
 
 export BLOCKSIZE=M
@@ -17,20 +14,6 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 export VIMHOME=$HOME/.vim
 
-###################
-# プログラム環境
-###################
-# CVS
-export CVS_RSH=ssh
-export CVS_SSH=ssh
-export CVSEDITOR=vim
-# SVN
-export SVN_SSH=ssh
-export SVN_EDITOR=vim
-
-###################
-# Env Common
-###################
 # C and C plus
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/:/usr/local/lib/
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.:/usr/lib/:/usr/local/lib/
@@ -40,8 +23,6 @@ export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:.:/usr/include/:/usr/local/include
 # Java
 export JAVA_HOME=
 export CLASSPATH=$CLASSPATH:.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar:/usr/share/java/jsp-api.jar:/usr/share/java/servlet-api.jar
-#export MANPATH=$MANPATH:$JAVA_HOME/man
-#export PATH=$PATH:$JAVA_HOME/bin
 
 # Perl
 export PERL5LIB=$PERL5LIB:/usr/lib/perl5/5.10.1
@@ -59,10 +40,11 @@ if [[ -n `which pyenv-virtualenv-init` ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-
 # Ruby
 export rvm_path=/usr/local/rvm
-[[ -e /usr/local/lib/rvm ]] && source /usr/local/lib/rvm
+if [[ -e /usr/local/lib/rvm ]]; then
+  source /usr/local/lib/rvm
+fi
 if [[ -d ~/.rbenv  ]]; then
     export PATH=${HOME}/.rbenv/bin:${PATH}
     eval "$(/usr/local/bin/rbenv init -)"
@@ -85,9 +67,6 @@ fi
 eval "$(direnv hook zsh)"
 
 case `uname` in
-###################
-# Env Mac
-###################
 Darwin)
     # HomeBrew
     export BREWHOME=/usr/local
@@ -102,9 +81,6 @@ Darwin)
     export MAC_XCODE=/Developer/SDKs/MacOSX10.4u.sdk/System/Library/Frameworks
 
     ;;
-###################
-# Env Linux
-###################
 Linux)
     # Perl
     export PERL_BADLANG=0
@@ -112,10 +88,7 @@ Linux)
     ;;
 esac
 
-#######################
-# Other Environment
-#######################
-### Added by the Heroku Toolbelt
+# Added by the Heroku Toolbelt
 if [ -d '/usr/local/heroku/bin' ]; then export PATH="/usr/local/heroku/bin:$PATH"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -123,9 +96,6 @@ if [ -f '/Users/mkataigi/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/m
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mkataigi/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/mkataigi/google-cloud-sdk/completion.zsh.inc'; fi
 
-##########################
-# terminal configuration
-##########################
 unset LSCOLORS
 case "${TERM}" in
 xterm)
@@ -195,5 +165,3 @@ esac
 for config in `ls $HOME/.zshenv.* 2> /dev/null`; do
     source $config
 done
-
-echo $PYENV_ROOT

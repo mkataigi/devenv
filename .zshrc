@@ -1,6 +1,3 @@
-###################
-# 設定用関数
-###################
 function ealias {
     cond=$3
     if [ "x$cond" = "x" ]; then
@@ -15,9 +12,6 @@ function ealias {
     fi
 }
 
-###################
-# 表示設定
-###################
 autoload -U compinit
 compinit 2> /dev/null
 autoload -U colors
@@ -28,14 +22,8 @@ autoload -Uz vcs_info
 fpath=(/usr/local/share/zsh-completions $fpath)
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-###################
-# キー設定
-###################
 bindkey -e
 
-###################
-# 設定
-###################
 setopt auto_cd
 setopt auto_pushd pushd_ignore_dups
 setopt correct
@@ -48,10 +36,6 @@ setopt prompt_subst
 setopt transient_rprompt
 setopt complete_aliases
 
-###################
-# ヒストリ
-###################
-HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_dups
@@ -59,16 +43,8 @@ setopt share_history
 setopt EXTENDED_HISTORY
 export WORDCHARS='*?[]~=&;!#$%^(){}<>'
 
-###################
-# オートロード
-###################
 autoload zed
-#autoload predict-on
-#predict-off
 
-###################
-# 検索機能
-###################
 autoload history-search-end
 function peco-history-selection() {
     BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
@@ -79,17 +55,11 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-###################
-# git completion
-###################
 autoload bashcompinit
 bashcompinit
 
 eval "$(jump shell)"
 
-###################
-# エイリアス
-###################
 alias -g G="|grep"
 alias -g L="|less -S"
 alias -g H="|head"
@@ -114,9 +84,6 @@ Linux)
     ;;
 esac
 
-###################
-# プロンプト表示
-###################
 local FGBLK='%{[30m%}' #black
 local FGRED='%{[31m%}' #reg
 local FGGRN='%{[32m%}' #green
@@ -155,8 +122,6 @@ case ${UID} in
     ;;
 esac
 
-####################
-# screen
 if [ "$TERM" = "screen" ]; then
     chpwd () { echo -n "_`dirs`\\" }
     preexec() {
@@ -191,15 +156,11 @@ if [ "$TERM" = "screen" ]; then
     chpwd
 fi
 
-####################
-# z
 . $(brew --prefix)/etc/profile.d/z.sh
 function precmd () {
     z --add "$(pwd -P)"
 }
 
-####################
-# git
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
@@ -211,14 +172,7 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-PATH=$PATH:/usr/local/rvm/bin # Add RVM to PATH for scripting
-
-###################
-# functions
 function ls_abbrev() {
-    # -a : Do not ignore entries starting with ..
-    # -C : Force multi-column output.
-    # -F : Append indicator (one of */=>@|) to entries.
     local cmd_ls='ls'
     local -a opt_ls
     opt_ls=('-aCF' '--color=always')
@@ -267,7 +221,7 @@ function show_ls_gitstatus() {
 zle -N show_ls_gitstatus
 alias l=show_ls_gitstatus
 
+
 for config in `ls $HOME/.zshrc.* 2> /dev/null`; do
-    echo "loading $config"
     source $config
 done
