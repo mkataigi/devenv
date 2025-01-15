@@ -54,6 +54,7 @@
 	gr = grep
 	gn = grep -n
 	showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $2...$1 | grep 'Merge pull request #' | head -n 1; }; f"
+	openpr = "!f() { gh browse -- `git log --merges --oneline --reverse --ancestry-path $2...$1 | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%%'`; }; f"
 [gpg]
 	program = gpg2
 [filter "lfs"]
