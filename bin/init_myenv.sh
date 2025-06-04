@@ -21,6 +21,7 @@ make_link ".emacs"
 make_link ".rgignore"
 make_link ".ssh/config"
 make_link "bin"
+make_link ".claude"
 
 make_link "Code/User/settings.json" $HOME'/Library/Application Support'
 
