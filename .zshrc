@@ -312,7 +312,7 @@ function cdworktree() {
         target_path="$target_worktree"
     fi
     cd "$target_path"
-    echo "$target_path ($target_worktree)"
+    echo "$target_path ($target_worktree_name)"
 }
 alias cdw="cdworktree"
 
