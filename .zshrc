@@ -248,42 +248,36 @@ function show_ls_gitstatus() {
 zle -N show_ls_gitstatus
 alias l=show_ls_gitstatus
 
-function cdwt() {
+function cdworktree() {
     if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
         echo "Error: Not in a git repository"
         return 1
     fi
-    
     local current_worktree_root=$(git rev-parse --show-toplevel)
     local current_path=$(pwd)
     local relative_path=${current_path#$current_worktree_root}
-    
     local worktrees=$(git worktree list --porcelain | grep "^worktree " | sed 's/^worktree //')
     local target_worktree=""
-    
     for worktree in ${(f)worktrees}; do
         if [[ "$worktree" != "$current_worktree_root" ]]; then
             target_worktree="$worktree"
             break
         fi
     done
-    
     if [[ -z "$target_worktree" ]]; then
         echo "Error: No other worktree found"
         return 1
     fi
-    
     local target_path="$target_worktree$relative_path"
-    
     if [[ ! -d "$target_path" ]]; then
         echo "Warning: Target directory does not exist: $target_path"
         echo "Jumping to worktree root instead: $target_worktree"
         target_path="$target_worktree"
     fi
-    
     cd "$target_path"
     echo "$target_path"
 }
+alias cdw="cdworktree"
 
 for config in `ls $HOME/.zshrc.* 2> /dev/null`; do
     source $config
