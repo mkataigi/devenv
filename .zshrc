@@ -253,19 +253,56 @@ function cdworktree() {
         echo "Error: Not in a git repository"
         return 1
     fi
+    local target_worktree_name="$1"
     local current_worktree_root=$(git rev-parse --show-toplevel)
     local current_path=$(pwd)
     local relative_path=${current_path#$current_worktree_root}
-    local worktrees=$(git worktree list --porcelain | grep "^worktree " | sed 's/^worktree //')
+    # Get all worktrees with their paths and branch names
+    local worktrees_info=$(git worktree list --porcelain)
     local target_worktree=""
-    for worktree in ${(f)worktrees}; do
-        if [[ "$worktree" != "$current_worktree_root" ]]; then
-            target_worktree="$worktree"
-            break
+    if [[ -z "$target_worktree_name" ]]; then
+        # No argument provided - find the main worktree (the one without a separate .git/worktrees entry)
+        local main_repo_path=$(git rev-parse --git-common-dir | sed 's|/.git$||')
+        if [[ "$main_repo_path" != "$current_worktree_root" ]]; then
+            target_worktree="$main_repo_path"
+        else
+            echo "Already in the main worktree"
+            return 0
         fi
-    done
+    else
+        # Search for worktree by name (directory basename or branch name)
+        while IFS= read -r line; do
+            if [[ "$line" =~ ^worktree\ (.+)$ ]]; then
+                local worktree_path="${match[1]}"
+                local worktree_dir=$(basename "$worktree_path")
+                # Skip current worktree
+                if [[ "$worktree_path" == "$current_worktree_root" ]]; then
+                    continue
+                fi
+                # Check if the directory name matches
+                if [[ "$worktree_dir" == "$target_worktree_name" ]]; then
+                    target_worktree="$worktree_path"
+                    break
+                fi
+            elif [[ "$line" =~ ^branch\ (.+)$ ]]; then
+                local branch_name="${match[1]}"
+                # Check if the branch name matches
+                if [[ "$branch_name" == "$target_worktree_name" || "$branch_name" == "refs/heads/$target_worktree_name" ]]; then
+                    # Use the previously found worktree path
+                    if [[ -n "$worktree_path" ]]; then
+                        target_worktree="$worktree_path"
+                        break
+                    fi
+                fi
+            fi
+        done <<< "$worktrees_info"
+    fi
     if [[ -z "$target_worktree" ]]; then
-        echo "Error: No other worktree found"
+        if [[ -z "$target_worktree_name" ]]; then
+            echo "Error: Could not find main worktree"
+        else
+            echo "Error: Worktree '$target_worktree_name' not found"
+        fi
         return 1
     fi
     local target_path="$target_worktree$relative_path"
@@ -275,7 +312,7 @@ function cdworktree() {
         target_path="$target_worktree"
     fi
     cd "$target_path"
-    echo "$target_path"
+    echo "$target_path ($target_worktree)"
 }
 alias cdw="cdworktree"
 
