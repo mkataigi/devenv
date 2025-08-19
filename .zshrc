@@ -166,10 +166,37 @@ zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
+function get_git_worktree_info() {
+    local worktree_name=""
+    if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        # worktreeのルートディレクトリを取得
+        local worktree_root=$(git rev-parse --show-toplevel 2>/dev/null)
+        if [[ -n "$worktree_root" ]]; then
+            # worktreeの名前を取得（ディレクトリ名）
+            worktree_name=$(basename "$worktree_root")
+            # メインのworktreeでない場合はworktree名を表示
+            local git_dir=$(git rev-parse --git-dir 2>/dev/null)
+            if [[ "$git_dir" == *".git/worktrees/"* ]]; then
+                echo "($worktree_name)"
+            fi
+        fi
+    fi
+}
+
 precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+    local git_info=""
+    local worktree_info=$(get_git_worktree_info)
+    
+    if [[ -n "$vcs_info_msg_0_" ]]; then
+        git_info="$vcs_info_msg_0_"
+        if [[ -n "$worktree_info" ]]; then
+            git_info="${git_info}${worktree_info}"
+        fi
+        psvar[1]="$git_info"
+    fi
 }
 
 function ls_abbrev() {
