@@ -1,63 +1,123 @@
----
-allowed-tools: Bash(gh:*), Bash(git:*)
-description: Generate PR description and automatically create pull request on GitHub
----
+# How to Create a Pull Request Using GitHub CLI
 
-## Context
+This guide explains how to create pull requests using GitHub CLI in our project.
 
-- Current git status: !`git status`
-- Changes in this PR: !`git diff master...HEAD`
-- Commits in this PR: !`git log --oneline master..HEAD`
-- PR template: @.github/pull_request_template.md
+**Important**: All PR titles and descriptions should be written in English.
 
-## Your task
+## Prerequisites
 
-Based on the provided option, perform one of the following actions:
+1. Install GitHub CLI if you haven't already:
 
-### Options:
+   ```bash
+   # macOS
+   brew install gh
 
-- **No option or default**: Generate PR description and create pull request
-- **-p**: Push current branch and create pull request
-- **-u**: Update existing pull request description only
+   # Windows
+   winget install --id GitHub.cli
 
-### Default behavior (no option):
+   # Linux
+   # Follow instructions at https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+   ```
 
-1. Create a PR description following the **exact format** of the PR template in Japanese
-2. **Add a Mermaid diagram** that visualizes the changes made in this PR
-3. Execute `gh pr create --draft` with the generated title and description
+2. Authenticate with GitHub:
+   ```bash
+   gh auth login
+   ```
 
-### With -p option:
+## Creating a New Pull Request
 
-1. Push current branch to remote repository using `git push -u origin <current-branch>`
-2. Create a PR description following the **exact format** of the PR template in Japanese
-3. **Add a Mermaid diagram** that visualizes the changes made in this PR
-4. Execute `gh pr create --draft` with the generated title and description
+1. First, prepare your PR description following the template in @.github/pull_request_template.md
 
-### With -u option:
+2. Use the `gh pr create --draft` command to create a new pull request:
 
-1. Create a PR description following the **exact format** of the PR template in Japanese
-2. **Add a Mermaid diagram** that visualizes the changes made in this PR
-3. Update existing pull request description using `gh pr edit --body <description>`
+   ```bash
+   # Basic command structure
+   gh pr create --draft --title "✨(scope): Your descriptive title" --body "Your PR description" --base main 
+   ```
 
-### Requirements:
+   For more complex PR descriptions with proper formatting, use the `--body-file` option with the exact PR template structure:
 
-1. Follow the template structure exactly
-2. Use Japanese for all content
-3. Include specific implementation details
-4. List concrete testing steps
-5. Always include a Mermaid diagram that shows:
-   - Architecture changes (if any)
-   - Data flow modifications
-   - Component relationships
-   - Process flows affected by the changes
-6. Be comprehensive but concise
+   ```bash
+   # Create PR with proper template structure
+   gh pr create --draft --title "✨(scope): Your descriptive title" --body-file .github/pull_request_template.md --base main
+   ```
 
-### Mermaid Diagram Guidelines:
+## Best Practices
 
-- Use appropriate diagram types (flowchart, sequence, class, etc.)
-- Show before/after states if applicable
-- Highlight new or modified components
-- Use consistent styling and colors
-- Add the diagram in a dedicated section of the PR description
+1. **Language**: Always use English for PR titles and descriptions
 
-**Generate the PR description and create the pull request automatically.**
+2. **PR Title Format**: Use conventional commit format with emojis
+
+   - Always include an appropriate emoji at the beginning of the title
+   - Use the actual emoji character (not the code representation like `:sparkles:`)
+   - Examples:
+     - `✨(supabase): Add staging remote configuration`
+     - `🐛(auth): Fix login redirect issue`
+     - `📝(readme): Update installation instructions`
+
+3. **Description Template**: Always use our PR template structure from @.github/pull_request_template.md:
+
+4. **Template Accuracy**: Ensure your PR description precisely follows the template structure:
+
+   - Don't modify or rename the PR-Agent sections (`pr_agent:summary` and `pr_agent:walkthrough`)
+   - Keep all section headers exactly as they appear in the template
+   - Don't add custom sections that aren't in the template
+
+5. **Draft PRs**: Start as draft when the work is in progress
+   - Use `--draft` flag in the command
+   - Convert to ready for review when complete using `gh pr ready`
+
+### Common Mistakes to Avoid
+
+1. **Using Non-English Text**: All PR content must be in English
+2. **Incorrect Section Headers**: Always use the exact section headers from the template
+3. **Adding Custom Sections**: Stick to the sections defined in the template
+4. **Using Outdated Templates**: Always refer to the current @.github/pull_request_template.md file
+
+### Missing Sections
+
+Always include all template sections, even if some are marked as "N/A" or "None"
+
+## Additional GitHub CLI PR Commands
+
+Here are some additional useful GitHub CLI commands for managing PRs:
+
+```bash
+# List your open pull requests
+gh pr list --author "@me"
+
+# Check PR status
+gh pr status
+
+# View a specific PR
+gh pr view <PR-NUMBER>
+
+# Check out a PR branch locally
+gh pr checkout <PR-NUMBER>
+
+# Convert a draft PR to ready for review
+gh pr ready <PR-NUMBER>
+
+# Add reviewers to a PR
+gh pr edit <PR-NUMBER> --add-reviewer username1,username2
+
+# Merge a PR
+gh pr merge <PR-NUMBER> --squash
+```
+
+## Using Templates for PR Creation
+
+To simplify PR creation with consistent descriptions, you can create a template file:
+
+1. Create a file named `pr-template.md` with your PR template
+2. Use it when creating PRs:
+
+```bash
+gh pr create --draft --title "feat(scope): Your title" --body-file pr-template.md --base main
+```
+
+## Related Documentation
+
+- [PR Template](.github/pull_request_template.md)
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- [GitHub CLI documentation](https://cli.github.com/manual/)
