@@ -2,3 +2,5 @@ id_rsa*
 id_dsa*
 *.tmp
 *.tmp/
+.codex/log/
+.codex/sessions/
