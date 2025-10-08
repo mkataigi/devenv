@@ -4,3 +4,4 @@ id_dsa*
 *.tmp/
 .codex/log/
 .codex/sessions/
+.claude/history.jsonl
