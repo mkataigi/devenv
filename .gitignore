@@ -2,6 +2,8 @@ id_rsa*
 id_dsa*
 *.tmp
 *.tmp/
+.claude/history.jsonl
 .codex/log/
 .codex/sessions/
-.claude/history.jsonl
+.claude/debug/
+.claude/file-history/
