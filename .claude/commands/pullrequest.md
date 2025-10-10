@@ -2,7 +2,7 @@
 
 This guide explains how to create pull requests using GitHub CLI in our project.
 
-**Important**: All PR titles and descriptions should be written in English.
+**Important**: All PR titles and descriptions should be written in Japanese.
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ This guide explains how to create pull requests using GitHub CLI in our project.
 
    ```bash
    # Basic command structure
-   gh pr create --draft --title "✨(scope): Your descriptive title" --body "Your PR description" --base main 
+   gh pr create --draft --title "✨(scope): Your descriptive title" --body "Your PR description" --base main
    ```
 
    For more complex PR descriptions with proper formatting, use the `--body-file` option with the exact PR template structure:
@@ -44,7 +44,7 @@ This guide explains how to create pull requests using GitHub CLI in our project.
 
 ## Best Practices
 
-1. **Language**: Always use English for PR titles and descriptions
+1. **Language**: Always use Japanese for PR titles and descriptions
 
 2. **PR Title Format**: Use conventional commit format with emojis
 
@@ -69,7 +69,7 @@ This guide explains how to create pull requests using GitHub CLI in our project.
 
 ### Common Mistakes to Avoid
 
-1. **Using Non-English Text**: All PR content must be in English
+1. **Using Non-Japanese Text**: All PR content must be in Japanese
 2. **Incorrect Section Headers**: Always use the exact section headers from the template
 3. **Adding Custom Sections**: Stick to the sections defined in the template
 4. **Using Outdated Templates**: Always refer to the current @.github/pull_request_template.md file
