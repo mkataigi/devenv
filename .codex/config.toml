@@ -12,3 +12,6 @@ web_search = true
 command = "npx"
 args = ["-y", "@upstash/context7-mcp@latest"]
 
+[projects."/Users/makoto.kataigi/repo/karte-io-systems"]
+trust_level = "trusted"
+

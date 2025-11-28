@@ -319,3 +319,8 @@ alias cdw="cdworktree"
 for config in `ls $HOME/.zshrc.* 2> /dev/null`; do
     source $config
 done
+
+test -e /Users/makoto.kataigi/.iterm2_shell_integration.zsh && source /Users/makoto.kataigi/.iterm2_shell_integration.zsh || true
+
+# Added by Antigravity
+export PATH="/Users/makoto.kataigi/.antigravity/antigravity/bin:$PATH"
