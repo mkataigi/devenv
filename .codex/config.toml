@@ -15,3 +15,6 @@ args = ["-y", "@upstash/context7-mcp@latest"]
 [projects."/Users/makoto.kataigi/repo/karte-io-systems"]
 trust_level = "trusted"
 
+[projects."/Users/makoto.kataigi/repo/private/small-tools"]
+trust_level = "trusted"
+
