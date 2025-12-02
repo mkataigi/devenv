@@ -5,6 +5,28 @@ network_access = true
 
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 
+[permissions]
+allow = [
+    "git *",
+    "pnpm vitest*",
+    "make:*",
+    "mkdir *",
+    "echo *",
+    "cat *",
+    "perl *",
+    "grep *",
+    "for *",
+    "do *",
+    "done",
+    "gcloud spanner databases *",
+]
+
+# 外部通信の許可 (WebFetch相当)
+allow_hosts = [
+    "github.com",
+    "code.claude.com"
+]
+
 [tools]
 web_search = true
 

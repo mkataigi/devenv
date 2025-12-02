@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(source:*)"
+      "Bash(git *)",
+      "Bash(pnpm vitest*)",
+      "Bash(make:*)",
+      "Bash(mkdir *)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(perl *)",
+      "Bash(grep *)",
+      "Bash(for *)",
+      "Bash(do *)",
+      "Bash(done)",
+      "mcp__serena__*",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:code.claude.com)"
     ],
     "deny": [],
     "ask": []
