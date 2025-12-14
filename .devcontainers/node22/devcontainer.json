@@ -1,8 +1,20 @@
 {
-  "name": "Node.js 22",
-  "dockerComposeFile": "../docker-compose.yml",
-  "service": "node22",
-  "workspaceFolder": "/workspace",
+  "name": "Node.js 22 with Claude Code",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22",
+      "nodeGypDependencies": true,
+      "installYarnUsingApt": true
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true
+    },
+    "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {}
+  },
+  "postCreateCommand": "npm install -g pnpm && node --version && npm --version && pnpm --version && claude-code --version",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -11,5 +23,6 @@
       ]
     }
   },
-  "postCreateCommand": "node --version && npm --version"
+  "postCreateCommand": "node --version && npm --version && claude-code --version",
+  "remoteUser": "vscode"
 }
