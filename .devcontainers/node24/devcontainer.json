@@ -5,6 +5,15 @@
     "--name",
     "${localEnv:DEVCONTAINER_NAME:devcontainer-node24}"
   ],
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    "CLAUDE_CODE_USE_VERTEX": "${localEnv:CLAUDE_CODE_USE_VERTEX}",
+    "CLOUD_ML_REGION": "${localEnv:CLOUD_ML_REGION}",
+    "ANTHROPIC_VERTEX_PROJECT_ID": "${localEnv:ANTHROPIC_VERTEX_PROJECT_ID}",
+    "GOOGLE_GENAI_USE_VERTEXAI": "${localEnv:GOOGLE_GENAI_USE_VERTEXAI}",
+    "GOOGLE_CLOUD_LOCATION": "${localEnv:GOOGLE_CLOUD_LOCATION}",
+    "GOOGLE_CLOUD_PROJECT": "${localEnv:GOOGLE_CLOUD_PROJECT}"
+  },
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "24",
