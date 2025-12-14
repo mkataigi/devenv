@@ -1,6 +1,10 @@
 {
   "name": "Node.js 24 with Claude Code",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "runArgs": [
+    "--name",
+    "${localEnv:DEVCONTAINER_NAME:devcontainer-node24}"
+  ],
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "version": "24",
