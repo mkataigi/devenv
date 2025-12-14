@@ -14,7 +14,7 @@
     },
     "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {}
   },
-  "postCreateCommand": "npm install -g pnpm && node --version && npm --version && pnpm --version && claude-code --version",
+  "postCreateCommand": "npm install -g pnpm",
   "customizations": {
     "vscode": {
       "extensions": [
