@@ -53,7 +53,6 @@ fi
 # Go lang
 export GOPATH=$HOME/code/go-local
 if [[ -x `which go` ]]; then
-    export GOROOT=`go env GOROOT`
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 

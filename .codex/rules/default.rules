@@ -1,0 +1,1 @@
+prefix_rule(pattern=["npm", "install", "@google-cloud/bigquery@5.4.0"], decision="allow")

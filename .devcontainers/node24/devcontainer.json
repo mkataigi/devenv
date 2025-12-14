@@ -1,0 +1,15 @@
+{
+  "name": "Node.js 24",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "node24",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "node --version && npm --version"
+}

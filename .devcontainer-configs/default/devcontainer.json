@@ -1,5 +1,0 @@
-{
-  "name": "Default Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:latest",
-  "workspaceFolder": "/workspace"
-}

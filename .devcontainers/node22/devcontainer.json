@@ -1,0 +1,15 @@
+{
+  "name": "Node.js 22",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "node22",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "node --version && npm --version"
+}

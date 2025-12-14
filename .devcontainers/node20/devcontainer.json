@@ -1,0 +1,15 @@
+{
+  "name": "Node.js 20",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "node20",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "postCreateCommand": "node --version && npm --version"
+}

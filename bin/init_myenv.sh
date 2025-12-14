@@ -23,7 +23,7 @@ make_link ".ssh/config"
 make_link "bin"
 make_link ".claude"
 make_link ".codex"
-make_link ".devcontainer-configs"
+make_link ".devcontainer"
 
 make_link "Code/User/settings.json" $HOME'/Library/Application Support'
 
