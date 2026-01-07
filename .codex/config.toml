@@ -38,3 +38,9 @@ trust_level = "trusted"
 [projects."/Users/makoto.kataigi/repo/private/small-tools"]
 trust_level = "trusted"
 
+[projects."/Users/makoto.kataigi/repo/pulse"]
+trust_level = "trusted"
+
+[projects."/Users/makoto.kataigi/repo/blitz"]
+trust_level = "trusted"
+
