@@ -1,8 +1,17 @@
-## Migrate to Actions
+---
+name: migrate-to-actions
+description: Cloud Build から GitHub Actions への移行を自動化します。cloudbuild.yml を GitHub Actions ワークフローと docker-bake.hcl に変換したい場合に使用してください。
+disable-model-invocation: true
+user-invocable: true
+allowed-tools: Bash, Read, Write, Edit, Grep, Glob
+argument-hint: [--dry-run] [--system-name <name>] [--force]
+---
 
-Cloud Build から GitHub Actions への移行を自動化するコマンドです。
+# Migrate to Actions
 
-### 使い方
+Cloud Build から GitHub Actions への移行を自動化するスキルです。
+
+## 使い方
 
 ```bash
 # 対話的モードで実行
@@ -18,75 +27,16 @@ Cloud Build から GitHub Actions への移行を自動化するコマンドで�
 /migrate-to-actions --force
 ```
 
-### オプション
+## オプション
 
 - なし : 対話的モードで実行
 - `--dry-run` : 実際のファイル生成は行わず、プレビューのみ表示
 - `--system-name <名前>` : システム名を指定（自動推定をスキップ）
 - `--force` : 既存ファイルを確認なしで上書き
 
-### 基本例
+## 移行プロセス
 
-```bash
-# cloudbuild.yml の存在確認
-ls -la cloudbuild.yml
-/migrate-to-actions
-「Cloud Build から GitHub Actions への移行を実行して」
-
-# システム名を明示的に指定
-/migrate-to-actions --system-name organization
-「organization システムの移行を実行」
-
-# 事前確認（ドライラン）
-/migrate-to-actions --dry-run
-「移行内容をプレビューして確認」
-```
-
-### Claude との連携
-
-```bash
-# cloudbuild.yml の内容を確認して移行
-cat cloudbuild.yml
-/migrate-to-actions
-「この Cloud Build 設定を GitHub Actions に移行して」
-
-# Docker 構成を含めた移行計画
-find . -name "Dockerfile*" -o -name "docker-compose.yml"
-/migrate-to-actions --dry-run
-「Docker 構成を考慮した移行計画を立てて」
-
-# 既存の CI/CD 設定との統合
-ls -la .github/workflows/
-/migrate-to-actions
-「既存のワークフローと統合しながら移行して」
-```
-
-### 詳細例
-
-```bash
-# 複雑な Cloud Build 設定の移行
-cat cloudbuild.yml
-find . -name "*.Dockerfile" -type f
-/migrate-to-actions --dry-run
-「以下の要件で移行計画を作成：
-1. 複数の Dockerfile を docker-bake.hcl に統合
-2. ビルドキャッシュの最適化
-3. GitHub Actions の並列ビルド活用
-4. 既存の CI/CD パイプラインとの互換性維持」
-
-# システム構成の自動検出と最適化
-ls -la systems/
-/migrate-to-actions
-「systems ディレクトリ構造から最適な移行戦略を提案して」
-
-# 移行後の検証計画
-/migrate-to-actions --system-name myapp
-「移行後の検証手順も含めて実行して」
-```
-
-### 移行プロセス
-
-#### Phase 1: 初期確認と解析
+### Phase 1: 初期確認と解析
 
 ```bash
 実行開始:
@@ -102,7 +52,7 @@ ls -la systems/
   - タグ付けルール
 ```
 
-#### Phase 2: 対話的確認
+### Phase 2: 対話的確認
 
 ```bash
 🔍 解析結果:
@@ -117,7 +67,7 @@ Dockerfiles:
 ✅ この内容で移行を進めてよろしいですか？ [Y/n]:
 ```
 
-#### Phase 3: ファイル生成
+### Phase 3: ファイル生成
 
 生成されるファイル構造：
 
@@ -140,7 +90,7 @@ Dockerfiles:
 - `docker-bake.hcl` は各システムのディレクトリ内（例: `systems/organization/`）に作成
 - GitHub Actions ワークフローはリポジトリルートの `.github/workflows/` に作成
 
-##### GitHub Actions ワークフロー生成
+#### GitHub Actions ワークフロー生成
 
 ```yaml
 # .github/workflows/build-{system_name}.yml として生成される内容
@@ -177,37 +127,7 @@ jobs:
 4. **with.system_name**: 検出または指定された system_name を使用
 5. **その他の設定**: 変更不可（完全に同じ形式を維持）
 
-システム名が `organization` の場合：
-
-```yaml
-# .github/workflows/build-organization.yml
-name: build-organization
-on:
-  workflow_dispatch:
-  pull_request:
-    types: [closed, labeled, synchronize]
-    branches: [develop]
-    paths:
-      - systems/organization/**
-      - .github/workflows/build-organization.yml
-
-jobs:
-  build-and-create-pr:
-    uses: ./.github/workflows/build-and-create-pr.yml
-    with:
-      system_name: organization
-    secrets: inherit
-    permissions:
-      contents: read
-      id-token: write
-      packages: write
-      pull-requests: write
-```
-
-この形式を必ず守り、`{system_name}` の部分のみを置換するようにします。
-その他の部分（インデント、順序、値など）は一切変更しません。
-
-#### Phase 4: 検証
+### Phase 4: 検証
 
 ```bash
 📋 検証ステップ:
@@ -221,14 +141,14 @@ jobs:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 注意事項
+## 注意事項
 
 - **前提条件**: Cloud Build を使用している Google Cloud プロジェクト
 - **制限事項**: Docker Buildx のインストールが必要
 - **推奨事項**: 本番環境への適用前に開発環境で検証
 - **ワークフロー形式**: 指定された形式を厳密に維持（system_name 以外は変更禁止）
 
-### 移行後の確認
+## 移行後の確認
 
 ```bash
 # Docker Buildx での動作確認
@@ -239,7 +159,7 @@ docker buildx bake -f docker-bake.hcl
 act -j build-and-create-pr
 ```
 
-### トラブルシューティング
+## トラブルシューティング
 
 ```bash
 # cloudbuild.yml が見つからない場合
@@ -260,13 +180,11 @@ act -j build-and-create-pr
    - docker buildx がインストールされていることを確認
 ```
 
----
-
 ## コマンド動作の詳細
 
 ### 実行時の処理フロー
 
-Claude Codeコマンド `/migrate-to-actions` を実行すると、以下の処理を自動的に行います：
+`/migrate-to-actions` を実行すると、以下の処理を自動的に行います：
 
 1. **現在のディレクトリを確認**して `cloudbuild.yml` の存在をチェック
 2. **Dockerfileを自動探索**（`./Dockerfile`、`./docker/*.Dockerfile` など）
@@ -280,10 +198,9 @@ Claude Codeコマンド `/migrate-to-actions` を実行すると、以下の処�
 
 ### エラー時の対処
 
-コマンド実行時にClaude自身が以下のようなチェックと対処を行います：
+コマンド実行時に以下のようなチェックと対処を行います：
 
 - `cloudbuild.yml` が見つからない場合は適切なエラーメッセージを表示
 - Dockerfileが見つからない場合は探索した場所を明示
 - 既存ファイルがある場合はバックアップを作成（`--force` オプションなしの場合）
 - 生成したファイルの検証に失敗した場合は詳細なエラー情報を提供
-
