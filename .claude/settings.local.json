@@ -20,7 +20,8 @@
       "WebSearch",
       "Bash(host:*)",
       "Skill(example-skills:skill-creator)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(bash:*)"
     ],
     "deny": [],
     "ask": []
