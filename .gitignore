@@ -15,9 +15,22 @@ id_dsa*
 .claude/plugins/installed_plugins.json
 .claude/plugins/marketplaces/claude-plugins-official/
 .claude/stats-cache.json
+.claude/bash-command-log.txt
+.claude/ide/
+.claude/projects/
+.claude/session-env/
+.claude/sessions/
+.claude/shell-snapshots/
+.claude/statsig/
+.claude/todos/
+.claude/settings.local.json
 
 .codex/log/
 .codex/sessions/
 .codex/archived_sessions/
 .codex/auth.json
 .codex/history.jsonl
+.codex/tmp/
+.codex/config.toml
+.codex/internal_storage.json
+.codex/version.json
