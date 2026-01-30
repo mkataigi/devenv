@@ -1,0 +1,75 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-drivers"
+tap "homebrew/core"
+tap "jesseduffield/lazydocker"
+brew "apr"
+brew "apr-util"
+brew "autoconf"
+brew "automake"
+brew "sqlite"
+brew "cmake"
+brew "direnv"
+brew "libksba"
+brew "pth"
+brew "dirmngr"
+brew "docbook"
+brew "doxygen"
+brew "libtool"
+brew "pkg-config"
+brew "emacs"
+brew "jpeg"
+brew "ffmpeg"
+brew "git"
+brew "global"
+brew "gnu-getopt"
+brew "gnupg"
+brew "go"
+brew "gpg-agent"
+brew "imagemagick"
+brew "lazydocker"
+brew "libusb-compat"
+brew "makedepend"
+brew "mas"
+brew "mecab"
+brew "mysql"
+brew "nkf"
+brew "node"
+brew "nvm"
+brew "peco"
+brew "pstree"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "rbenv"
+brew "ruby"
+brew "scala"
+brew "scons"
+brew "source-highlight"
+brew "sphinx-doc"
+brew "subversion"
+brew "tig"
+brew "tmux"
+brew "tree"
+brew "wget"
+brew "z"
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+mas "1Password 7", id: 1333542190
+mas "Activity Timer", id: 808647808
+mas "Bitwarden", id: 1352778147
+mas "CotEditor", id: 1024640650
+mas "Day One", id: 1055511498
+mas "Final Cut Pro", id: 424389933
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LINE", id: 539883307
+mas "MPlayerX", id: 421131143
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Slack", id: 803453959
+mas "StuffIt Expander", id: 405580712
+mas "The Unarchiver", id: 425424353
+mas "Toggl Track", id: 957734279
+mas "Tweetbot", id: 557168941

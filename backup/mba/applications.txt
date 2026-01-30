@@ -1,0 +1,41 @@
+1Password 7.app
+ActivityTimer.app
+Alfred 4.app
+Authy Desktop.app
+Backup and Sync.app
+Bartender 4.app
+CotEditor.app
+Day One.app
+Docker.app
+Dropbox.app
+Evernote.app
+Final Cut Pro.app
+Firefox.app
+GoPro Quik.app
+Google Chrome.app
+Karabiner-Elements.app
+Karabiner-EventViewer.app
+Kaspersky Anti-Virus For Mac.app
+Keynote.app
+Kindle.app
+LINE.app
+MPlayerX.app
+Notion.app
+Numbers.app
+Pages.app
+Safari.app
+Skitch.app
+Skype.app
+Slack.app
+Steam.app
+StuffIt Expander.app
+TextExpander.app
+The Unarchiver.app
+Toggl Track.app
+Tweetbot.app
+Utilities
+VLC.app
+Visual Studio Code.app
+iMovie.app
+iTerm.app
+zoom.us.app
