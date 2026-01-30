@@ -1,1 +1,2 @@
 prefix_rule(pattern=["npm", "install", "@google-cloud/bigquery@5.4.0"], decision="allow")
+prefix_rule(pattern=["pnpm", "install", "-w", "--lockfile-only"], decision="allow")

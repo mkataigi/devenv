@@ -1,4 +1,4 @@
-model = "gpt-5-codex"
+model = "gpt-5.2-codex"
 hide_agent_reasoning = true
 network_access = true
 
@@ -43,4 +43,10 @@ trust_level = "trusted"
 
 [projects."/Users/makoto.kataigi/repo/blitz"]
 trust_level = "trusted"
+
+[projects."/Users/makoto.kataigi"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+gpt-5-codex = "gpt-5.2-codex"
 

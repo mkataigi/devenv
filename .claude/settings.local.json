@@ -14,7 +14,11 @@
       "Bash(done)",
       "mcp__serena__*",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:code.claude.com)"
+      "WebFetch(domain:code.claude.com)",
+      "Bash(whois:*)",
+      "Bash(dig -x:*)",
+      "WebSearch",
+      "Bash(host:*)"
     ],
     "deny": [],
     "ask": []
