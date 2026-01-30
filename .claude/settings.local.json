@@ -18,7 +18,9 @@
       "Bash(whois:*)",
       "Bash(dig -x:*)",
       "WebSearch",
-      "Bash(host:*)"
+      "Bash(host:*)",
+      "Skill(example-skills:skill-creator)",
+      "Bash(python3:*)"
     ],
     "deny": [],
     "ask": []
