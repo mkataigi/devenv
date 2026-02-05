@@ -39,3 +39,4 @@ id_dsa*
 .codex/.codex-global-state.json
 .codex/.personality_migration
 .codex/models_cache.json
+.codex/sqlite/
