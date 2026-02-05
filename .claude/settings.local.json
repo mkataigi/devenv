@@ -21,7 +21,14 @@
       "Bash(host:*)",
       "Skill(example-skills:skill-creator)",
       "Bash(python3:*)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(do)",
+      "Bash(dir_name=\"$dir%/\")",
+      "Bash(if [ -d \"$dir_name/.git\" ])",
+      "Bash(then)",
+      "Bash(elif [ -f \"$dir_name/.git\" ])",
+      "Bash(else)",
+      "Bash(fi:*)"
     ],
     "deny": [],
     "ask": []

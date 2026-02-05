@@ -4,6 +4,10 @@ description: GitHub CLI を使用してプルリクエストを作成します�
 disable-model-invocation: true
 user-invocable: true
 allowed-tools: Bash, Read
+arguments:
+  - name: issue
+    description: 紐づけるissue番号（例: 123）。指定するとPRがissueにリンクされます。
+    required: false
 ---
 
 # プルリクエスト作成スキル
@@ -49,6 +53,26 @@ GitHub CLI を使用してプルリクエストを作成します。
    # 適切なテンプレート構造で PR を作成
    gh pr create --draft --title "✨(scope): 説明的なタイトル" --body-file .github/pull_request_template.md --base main
    ```
+
+## Issue との紐付け
+
+`$ARGUMENTS` に issue 番号が指定された場合（例: `--issue 123`）、PR を該当 issue にリンクします。
+
+**紐付け方法**: PR 説明の末尾に `Closes #<issue番号>` を追加することで、PR がマージされた際に issue が自動的にクローズされます。
+
+```bash
+# issue 番号が指定された場合のコマンド例
+gh pr create --draft --title "✨(scope): 説明的なタイトル" --body "PR 説明
+
+Closes #123" --base main
+```
+
+**キーワードの種類**:
+- `Closes #123` - PR マージ時に issue をクローズ
+- `Fixes #123` - バグ修正の場合に使用
+- `Resolves #123` - 同様に issue をクローズ
+
+issue が指定された場合は、必ず PR 説明に上記のキーワードを含めてください。
 
 ## ベストプラクティス
 

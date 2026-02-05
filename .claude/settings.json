@@ -1,4 +1,5 @@
 {
+  "model": "claude-opus-4-5@20251101",
   "hooks": {
     "Notification": [
       {
@@ -35,10 +36,10 @@
     ]
   },
   "enabledPlugins": {
-    "example-skills@anthropic-agent-skills": true
+    "example-skills@anthropic-agent-skills": true,
+    "gopls-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "autoUpdatesChannel": "stable",
-  "minimumVersion": "2.1.12",
-  "model": "claude-opus-4-5@20251101"
+  "minimumVersion": "2.1.12"
 }
