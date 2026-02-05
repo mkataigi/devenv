@@ -324,3 +324,4 @@ test -e /Users/makoto.kataigi/.iterm2_shell_integration.zsh && source /Users/mak
 
 # Added by Antigravity
 export PATH="/Users/makoto.kataigi/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
