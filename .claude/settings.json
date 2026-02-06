@@ -1,5 +1,8 @@
 {
   "model": "claude-opus-4-5@20251101",
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "hooks": {
     "Notification": [
       {
