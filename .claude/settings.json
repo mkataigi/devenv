@@ -1,8 +1,8 @@
 {
-  "model": "claude-opus-4-5@20251101",
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -43,7 +43,6 @@
     "gopls-lsp@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "autoUpdatesChannel": "stable",
-  "minimumVersion": "2.1.12",
-  "model": "opus"
+  "autoUpdatesChannel": "latest",
+  "language": "Japanese"
 }

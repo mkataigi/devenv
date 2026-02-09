@@ -1,5 +1,5 @@
 {
-  "numStartups": 357,
+  "numStartups": 362,
   "installMethod": "native",
   "autoUpdates": false,
   "preferredNotifChannel": "terminal_bell",
@@ -15,35 +15,35 @@
     "ide-hotkey": 171,
     "shift-enter": 355,
     "memory-command": 356,
-    "theme-command": 341,
+    "theme-command": 361,
     "prompt-queue": 133,
     "enter-to-steer-in-relatime": 345,
     "todo-list": 351,
     "# for memory": 218,
     "install-github-app": 356,
-    "permissions": 345,
-    "drag-and-drop-images": 345,
+    "permissions": 357,
+    "drag-and-drop-images": 357,
     "double-esc": 156,
-    "continue": 349,
+    "continue": 359,
     "custom-commands": 352,
-    "shift-tab": 351,
-    "git-worktrees": 345,
+    "shift-tab": 361,
+    "git-worktrees": 357,
     "custom-agents": 352,
     "status-line": 350,
-    "paste-images-mac": 347,
+    "paste-images-mac": 357,
     "image-paste": 351,
     "plan-mode-for-complex-tasks": 215,
-    "double-esc-code-restore": 347,
+    "double-esc-code-restore": 357,
     "tab-toggle-thinking": 219,
     "ultrathink-keyword": 239,
-    "default-permission-mode-config": 351,
+    "default-permission-mode-config": 361,
     "stickers-command": 306,
-    "install-slack-app": 351,
+    "install-slack-app": 361,
     "rename-conversation": 349,
     "desktop-app": 353,
     "web-app": 354,
     "mobile-app": 355,
-    "agent-flag": 342,
+    "agent-flag": 357,
     "ide-upsell-external-terminal": 348
   },
   "promptQueueUseCount": 44,
@@ -721,37 +721,39 @@
         "AGENTS.md"
       ],
       "exampleFilesGeneratedAt": 1769745789417,
-      "lastCost": 0.803313,
-      "lastAPIDuration": 119705,
-      "lastAPIDurationWithoutRetries": 119697,
-      "lastToolDuration": 11228,
-      "lastDuration": 4276224,
-      "lastLinesAdded": 13,
+      "lastCost": 2.78419825,
+      "lastAPIDuration": 129685,
+      "lastAPIDurationWithoutRetries": 129671,
+      "lastToolDuration": 128606,
+      "lastDuration": 4172668,
+      "lastLinesAdded": 0,
       "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 9306,
-      "lastTotalOutputTokens": 5547,
-      "lastTotalCacheCreationInputTokens": 79688,
-      "lastTotalCacheReadInputTokens": 343732,
+      "lastTotalInputTokens": 5010,
+      "lastTotalOutputTokens": 4103,
+      "lastTotalCacheCreationInputTokens": 97637,
+      "lastTotalCacheReadInputTokens": 443401,
       "lastTotalWebSearchRequests": 0,
       "lastModelUsage": {
         "claude-haiku-4-5@20251001": {
-          "inputTokens": 9112,
-          "outputTokens": 768,
+          "inputTokens": 4958,
+          "outputTokens": 358,
           "cacheReadInputTokens": 0,
           "cacheCreationInputTokens": 0,
           "webSearchRequests": 0,
-          "costUSD": 0.012951999999999998
+          "costUSD": 0.006748
         },
-        "claude-opus-4-5@20251101": {
-          "inputTokens": 194,
-          "outputTokens": 4779,
-          "cacheReadInputTokens": 343732,
-          "cacheCreationInputTokens": 79688,
+        "claude-opus-4-1@20250805": {
+          "inputTokens": 52,
+          "outputTokens": 3745,
+          "cacheReadInputTokens": 443401,
+          "cacheCreationInputTokens": 97637,
           "webSearchRequests": 0,
-          "costUSD": 0.7903610000000001
+          "costUSD": 2.7774502500000002
         }
       },
-      "lastSessionId": "ba1e1876-092f-44eb-8763-2419072ac3a9"
+      "lastSessionId": "68da952f-7cc4-4625-9e0a-2c665d1a7388",
+      "lastFpsAverage": 1.91,
+      "lastFpsLow1Pct": 283.99
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/wt5": {
       "allowedTools": [],
@@ -779,31 +781,22 @@
       ],
       "exampleFilesGeneratedAt": 1770542350092,
       "hasCompletedProjectOnboarding": true,
-      "lastCost": 3.91379825,
-      "lastAPIDuration": 535421,
-      "lastAPIDurationWithoutRetries": 535384,
-      "lastToolDuration": 1200426,
-      "lastDuration": 61516565,
+      "lastCost": 0,
+      "lastAPIDuration": 0,
+      "lastAPIDurationWithoutRetries": 0,
+      "lastToolDuration": 0,
+      "lastDuration": 7001,
       "lastLinesAdded": 0,
       "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 20908,
-      "lastTotalOutputTokens": 29593,
-      "lastTotalCacheCreationInputTokens": 345051,
-      "lastTotalCacheReadInputTokens": 1825729,
+      "lastTotalInputTokens": 0,
+      "lastTotalOutputTokens": 0,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
       "lastTotalWebSearchRequests": 0,
-      "lastModelUsage": {
-        "claude-opus-4-6": {
-          "inputTokens": 20908,
-          "outputTokens": 29593,
-          "cacheReadInputTokens": 1825729,
-          "cacheCreationInputTokens": 345051,
-          "webSearchRequests": 0,
-          "costUSD": 3.91379825
-        }
-      },
-      "lastSessionId": "96d2b722-99fe-4a88-a125-7584979c437e",
-      "lastFpsAverage": 1.17,
-      "lastFpsLow1Pct": 110.3,
+      "lastModelUsage": {},
+      "lastSessionId": "c37285fa-34b9-4455-862e-88322370c2f0",
+      "lastFpsAverage": 5.43,
+      "lastFpsLow1Pct": 65.34,
       "disabledMcpServers": [
         "karte-copilot-knowledge-mcp"
       ]
@@ -894,7 +887,7 @@
       "lastSessionId": "30beaf87-3ff4-4634-9247-bd453673dad5"
     }
   },
-  "changelogLastFetched": 1770542348156,
+  "changelogLastFetched": 1770616255038,
   "hasIdeOnboardingBeenShown": {
     "vscode": true
   },
@@ -960,16 +953,16 @@
       "lastUsedAt": 1770265346279
     },
     "debug": {
-      "usageCount": 2,
-      "lastUsedAt": 1769684521719
+      "usageCount": 5,
+      "lastUsedAt": 1770616027243
     },
     "analyze-issue": {
       "usageCount": 1,
       "lastUsedAt": 1769750567482
     },
     "git-sync": {
-      "usageCount": 10,
-      "lastUsedAt": 1770343742935
+      "usageCount": 12,
+      "lastUsedAt": 1770609334590
     },
     "example-skills:skill-creator": {
       "usageCount": 1,
@@ -1008,7 +1001,7 @@
   "lspRecommendationIgnoredCount": 2,
   "clientDataCache": {
     "data": null,
-    "timestamp": 1770542509066
+    "timestamp": 1770616027268
   },
   "penguinModeOrgEnabled": true
 }
