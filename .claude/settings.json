@@ -2,7 +2,7 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "model": "opus",
+  "model": "claude-opus-4-6",
   "hooks": {
     "Notification": [
       {
@@ -42,7 +42,7 @@
     "example-skills@anthropic-agent-skills": true,
     "gopls-lsp@claude-plugins-official": true
   },
+  "language": "Japanese",
   "alwaysThinkingEnabled": true,
-  "autoUpdatesChannel": "latest",
-  "language": "Japanese"
+  "autoUpdatesChannel": "latest"
 }

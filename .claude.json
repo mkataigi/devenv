@@ -1,5 +1,5 @@
 {
-  "numStartups": 362,
+  "numStartups": 364,
   "installMethod": "native",
   "autoUpdates": false,
   "preferredNotifChannel": "terminal_bell",
@@ -39,7 +39,7 @@
     "default-permission-mode-config": 361,
     "stickers-command": 306,
     "install-slack-app": 361,
-    "rename-conversation": 349,
+    "rename-conversation": 364,
     "desktop-app": 353,
     "web-app": 354,
     "mobile-app": 355,
@@ -785,7 +785,7 @@
       "lastAPIDuration": 0,
       "lastAPIDurationWithoutRetries": 0,
       "lastToolDuration": 0,
-      "lastDuration": 7001,
+      "lastDuration": 174966,
       "lastLinesAdded": 0,
       "lastLinesRemoved": 0,
       "lastTotalInputTokens": 0,
@@ -794,9 +794,9 @@
       "lastTotalCacheReadInputTokens": 0,
       "lastTotalWebSearchRequests": 0,
       "lastModelUsage": {},
-      "lastSessionId": "c37285fa-34b9-4455-862e-88322370c2f0",
-      "lastFpsAverage": 5.43,
-      "lastFpsLow1Pct": 65.34,
+      "lastSessionId": "c2c74b26-3b56-469f-a2f5-00d080c768b2",
+      "lastFpsAverage": 0.33,
+      "lastFpsLow1Pct": 74.78,
       "disabledMcpServers": [
         "karte-copilot-knowledge-mcp"
       ]
@@ -953,8 +953,8 @@
       "lastUsedAt": 1770265346279
     },
     "debug": {
-      "usageCount": 5,
-      "lastUsedAt": 1770616027243
+      "usageCount": 8,
+      "lastUsedAt": 1770616533073
     },
     "analyze-issue": {
       "usageCount": 1,
@@ -1001,7 +1001,7 @@
   "lspRecommendationIgnoredCount": 2,
   "clientDataCache": {
     "data": null,
-    "timestamp": 1770616027268
+    "timestamp": 1770616533100
   },
   "penguinModeOrgEnabled": true
 }
