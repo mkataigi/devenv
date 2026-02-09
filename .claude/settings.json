@@ -44,5 +44,6 @@
   },
   "alwaysThinkingEnabled": true,
   "autoUpdatesChannel": "stable",
-  "minimumVersion": "2.1.12"
+  "minimumVersion": "2.1.12",
+  "model": "opus"
 }
