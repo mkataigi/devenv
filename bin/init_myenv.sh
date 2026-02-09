@@ -22,6 +22,7 @@ make_link ".rgignore"
 make_link ".ssh/config"
 make_link "bin"
 make_link ".claude"
+make_link ".claude.json"
 make_link ".codex"
 make_link ".devcontainers"
 
