@@ -1,5 +1,5 @@
 {
-  "numStartups": 364,
+  "numStartups": 375,
   "installMethod": "native",
   "autoUpdates": false,
   "preferredNotifChannel": "terminal_bell",
@@ -13,41 +13,40 @@
   "tipsHistory": {
     "new-user-warmup": 1,
     "ide-hotkey": 171,
-    "shift-enter": 355,
-    "memory-command": 356,
+    "shift-enter": 375,
+    "memory-command": 372,
     "theme-command": 361,
     "prompt-queue": 133,
-    "enter-to-steer-in-relatime": 345,
-    "todo-list": 351,
+    "enter-to-steer-in-relatime": 365,
+    "todo-list": 371,
     "# for memory": 218,
-    "install-github-app": 356,
-    "permissions": 357,
-    "drag-and-drop-images": 357,
+    "install-github-app": 366,
+    "permissions": 367,
+    "drag-and-drop-images": 367,
     "double-esc": 156,
-    "continue": 359,
-    "custom-commands": 352,
-    "shift-tab": 361,
-    "git-worktrees": 357,
-    "custom-agents": 352,
-    "status-line": 350,
-    "paste-images-mac": 357,
-    "image-paste": 351,
-    "plan-mode-for-complex-tasks": 215,
-    "double-esc-code-restore": 357,
+    "continue": 370,
+    "custom-commands": 367,
+    "shift-tab": 372,
+    "git-worktrees": 367,
+    "custom-agents": 367,
+    "status-line": 375,
+    "paste-images-mac": 367,
+    "image-paste": 371,
+    "plan-mode-for-complex-tasks": 372,
+    "double-esc-code-restore": 367,
     "tab-toggle-thinking": 219,
     "ultrathink-keyword": 239,
-    "default-permission-mode-config": 361,
+    "default-permission-mode-config": 372,
     "stickers-command": 306,
-    "install-slack-app": 361,
+    "install-slack-app": 372,
     "rename-conversation": 364,
-    "desktop-app": 353,
-    "web-app": 354,
-    "mobile-app": 355,
-    "agent-flag": 357,
+    "desktop-app": 368,
+    "web-app": 370,
+    "mobile-app": 370,
+    "agent-flag": 372,
     "ide-upsell-external-terminal": 348
   },
   "promptQueueUseCount": 44,
-  "showExpandedTodos": true,
   "autoConnectIde": true,
   "cachedStatsigGates": {
     "tengu_disable_bypass_permissions_mode": false,
@@ -273,17 +272,17 @@
       "hasClaudeMdExternalIncludesApproved": false,
       "hasClaudeMdExternalIncludesWarningShown": false,
       "lastTotalWebSearchRequests": 0,
-      "lastCost": 0,
-      "lastAPIDuration": 0,
-      "lastToolDuration": 0,
-      "lastDuration": 15310,
-      "lastLinesAdded": 0,
-      "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 0,
-      "lastTotalOutputTokens": 0,
-      "lastTotalCacheCreationInputTokens": 0,
-      "lastTotalCacheReadInputTokens": 0,
-      "lastSessionId": "9094a865-c8ba-4935-a2fc-2cf314721900",
+      "lastCost": 1.6649755000000002,
+      "lastAPIDuration": 244921,
+      "lastToolDuration": 310620,
+      "lastDuration": 3813879,
+      "lastLinesAdded": 234,
+      "lastLinesRemoved": 4,
+      "lastTotalInputTokens": 6392,
+      "lastTotalOutputTokens": 9895,
+      "lastTotalCacheCreationInputTokens": 161166,
+      "lastTotalCacheReadInputTokens": 1406916,
+      "lastSessionId": "35ab3b93-a87a-4e50-a6ba-74261f6f99a8",
       "reactVulnerabilityCache": {
         "detected": false,
         "package": null,
@@ -291,11 +290,37 @@
         "version": null,
         "packageManager": null
       },
-      "lastAPIDurationWithoutRetries": 0,
-      "lastModelUsage": {},
+      "lastAPIDurationWithoutRetries": 244886,
+      "lastModelUsage": {
+        "claude-opus-4-6": {
+          "inputTokens": 47,
+          "outputTokens": 9451,
+          "cacheReadInputTokens": 1406916,
+          "cacheCreationInputTokens": 102997,
+          "webSearchRequests": 0,
+          "costUSD": 1.5836992500000002
+        },
+        "claude-haiku-4-5@20251001": {
+          "inputTokens": 6345,
+          "outputTokens": 444,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 58169,
+          "webSearchRequests": 0,
+          "costUSD": 0.08127625000000001
+        }
+      },
       "hasCompletedProjectOnboarding": true,
-      "lastFpsAverage": 6.36,
-      "lastFpsLow1Pct": 139.66
+      "lastFpsAverage": 2.46,
+      "lastFpsLow1Pct": 79.02,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 8100,
+        "frame_duration_ms_min": 0.2352079995907843,
+        "frame_duration_ms_max": 774.5190419999999,
+        "frame_duration_ms_avg": 2.2511014170368804,
+        "frame_duration_ms_p50": 1.4011664999998175,
+        "frame_duration_ms_p95": 6.389839400266641,
+        "frame_duration_ms_p99": 12.420501909991117
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/worktree1": {
       "allowedTools": [],
@@ -445,17 +470,17 @@
       "exampleFilesGeneratedAt": 1770266370403,
       "hasCompletedProjectOnboarding": true,
       "lastTotalWebSearchRequests": 0,
-      "lastCost": 8.532347999999997,
-      "lastAPIDuration": 1006974,
-      "lastToolDuration": 211525,
-      "lastDuration": 14796724,
-      "lastLinesAdded": 330,
-      "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 24697,
-      "lastTotalOutputTokens": 42601,
-      "lastTotalCacheCreationInputTokens": 829880,
-      "lastTotalCacheReadInputTokens": 7247274,
-      "lastSessionId": "88f1edea-1bd8-43e5-bcbc-4c75d93b99ff",
+      "lastCost": 7.065717900000003,
+      "lastAPIDuration": 851094,
+      "lastToolDuration": 897022,
+      "lastDuration": 59444399,
+      "lastLinesAdded": 5,
+      "lastLinesRemoved": 5,
+      "lastTotalInputTokens": 301626,
+      "lastTotalOutputTokens": 32214,
+      "lastTotalCacheCreationInputTokens": 567950,
+      "lastTotalCacheReadInputTokens": 8439736,
+      "lastSessionId": "9adb6daa-f6e8-416f-b480-8d0dadf8e1ef",
       "reactVulnerabilityCache": {
         "detected": false,
         "package": null,
@@ -463,35 +488,36 @@
         "version": null,
         "packageManager": null
       },
-      "lastAPIDurationWithoutRetries": 1006890,
+      "lastAPIDurationWithoutRetries": 850948,
       "lastModelUsage": {
-        "claude-sonnet-4-5@20250929": {
-          "inputTokens": 6177,
-          "outputTokens": 26066,
-          "cacheReadInputTokens": 3772486,
-          "cacheCreationInputTokens": 437433,
-          "webSearchRequests": 0,
-          "costUSD": 5.302734250000001
-        },
         "claude-haiku-4-5@20251001": {
-          "inputTokens": 18471,
-          "outputTokens": 5191,
-          "cacheReadInputTokens": 1744625,
-          "cacheCreationInputTokens": 118199,
+          "inputTokens": 300053,
+          "outputTokens": 10700,
+          "cacheReadInputTokens": 2224639,
+          "cacheCreationInputTokens": 142650,
           "webSearchRequests": 0,
-          "costUSD": 0.3666372499999999
+          "costUSD": 0.7543293999999998
         },
         "claude-opus-4-6": {
-          "inputTokens": 49,
-          "outputTokens": 11344,
-          "cacheReadInputTokens": 1730163,
-          "cacheCreationInputTokens": 274248,
+          "inputTokens": 1573,
+          "outputTokens": 21514,
+          "cacheReadInputTokens": 6215097,
+          "cacheCreationInputTokens": 425300,
           "webSearchRequests": 0,
-          "costUSD": 2.8629765000000007
+          "costUSD": 6.3113885000000005
         }
       },
-      "lastFpsAverage": 11.96,
-      "lastFpsLow1Pct": 63.18
+      "lastFpsAverage": 1.99,
+      "lastFpsLow1Pct": 81.74,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 31017,
+        "frame_duration_ms_min": 0.12312499998370185,
+        "frame_duration_ms_max": 5524.474707999267,
+        "frame_duration_ms_avg": 2.5325250068674316,
+        "frame_duration_ms_p50": 1.1949579999782145,
+        "frame_duration_ms_p95": 5.654056249978018,
+        "frame_duration_ms_p99": 13.819354589991262
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/wt2": {
       "allowedTools": [],
@@ -508,23 +534,23 @@
         "testActivities.ts",
         "workflow.ts",
         "pulseWrap.ts",
-        "worker.ts",
-        "entryWorkflow/workflow.ts"
+        "workflow.test.ts",
+        "worker.ts"
       ],
-      "exampleFilesGeneratedAt": 1770113561550,
+      "exampleFilesGeneratedAt": 1770973332574,
       "lastTotalWebSearchRequests": 0,
       "hasCompletedProjectOnboarding": true,
-      "lastCost": 0,
-      "lastAPIDuration": 0,
-      "lastToolDuration": 0,
-      "lastDuration": 7524,
-      "lastLinesAdded": 0,
-      "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 0,
-      "lastTotalOutputTokens": 0,
-      "lastTotalCacheCreationInputTokens": 0,
-      "lastTotalCacheReadInputTokens": 0,
-      "lastSessionId": "38675515-19f6-4909-919e-02eb791f228f",
+      "lastCost": 40.30608184999997,
+      "lastAPIDuration": 6018631,
+      "lastToolDuration": 3315707,
+      "lastDuration": 233521771,
+      "lastLinesAdded": 2788,
+      "lastLinesRemoved": 145,
+      "lastTotalInputTokens": 269444,
+      "lastTotalOutputTokens": 404210,
+      "lastTotalCacheCreationInputTokens": 2921657,
+      "lastTotalCacheReadInputTokens": 31310958,
+      "lastSessionId": "96f0a618-f139-422c-99bc-5b491c94ec96",
       "reactVulnerabilityCache": {
         "detected": false,
         "package": null,
@@ -532,10 +558,36 @@
         "version": null,
         "packageManager": null
       },
-      "lastAPIDurationWithoutRetries": 0,
-      "lastModelUsage": {},
-      "lastFpsAverage": 7.48,
-      "lastFpsLow1Pct": 97.23
+      "lastAPIDurationWithoutRetries": 6016481,
+      "lastModelUsage": {
+        "claude-haiku-4-5@20251001": {
+          "inputTokens": 210423,
+          "outputTokens": 19989,
+          "cacheReadInputTokens": 4504316,
+          "cacheCreationInputTokens": 403805,
+          "webSearchRequests": 0,
+          "costUSD": 1.2655558500000015
+        },
+        "claude-opus-4-6": {
+          "inputTokens": 59021,
+          "outputTokens": 384221,
+          "cacheReadInputTokens": 26806642,
+          "cacheCreationInputTokens": 2517852,
+          "webSearchRequests": 0,
+          "costUSD": 39.04052600000001
+        }
+      },
+      "lastFpsAverage": 7.23,
+      "lastFpsLow1Pct": 48.03,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 155117,
+        "frame_duration_ms_min": 0.04354200046509504,
+        "frame_duration_ms_max": 1005.0727500002831,
+        "frame_duration_ms_avg": 2.272711592464182,
+        "frame_duration_ms_p50": 1.078207999933511,
+        "frame_duration_ms_p95": 5.916823150124391,
+        "frame_duration_ms_p99": 22.373018730450415
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/wt3": {
       "allowedTools": [],
@@ -561,24 +613,50 @@
         "worker.ts",
         "entryWorkflow.ts"
       ],
-      "exampleFilesGeneratedAt": 1770012765779,
+      "exampleFilesGeneratedAt": 1770979520310,
       "hasCompletedProjectOnboarding": true,
-      "lastCost": 0,
-      "lastAPIDuration": 0,
-      "lastAPIDurationWithoutRetries": 0,
-      "lastToolDuration": 0,
-      "lastDuration": 8213,
-      "lastLinesAdded": 0,
-      "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 0,
-      "lastTotalOutputTokens": 0,
-      "lastTotalCacheCreationInputTokens": 0,
-      "lastTotalCacheReadInputTokens": 0,
+      "lastCost": 5.707301500000001,
+      "lastAPIDuration": 845136,
+      "lastAPIDurationWithoutRetries": 845071,
+      "lastToolDuration": 24112,
+      "lastDuration": 2468084,
+      "lastLinesAdded": 639,
+      "lastLinesRemoved": 72,
+      "lastTotalInputTokens": 10338,
+      "lastTotalOutputTokens": 51992,
+      "lastTotalCacheCreationInputTokens": 238680,
+      "lastTotalCacheReadInputTokens": 5905203,
       "lastTotalWebSearchRequests": 0,
-      "lastModelUsage": {},
-      "lastSessionId": "aa35a47b-afdc-4dec-8ac3-17f407732fcb",
-      "lastFpsAverage": 5.27,
-      "lastFpsLow1Pct": 95.46
+      "lastModelUsage": {
+        "claude-opus-4-6": {
+          "inputTokens": 113,
+          "outputTokens": 51209,
+          "cacheReadInputTokens": 5905203,
+          "cacheCreationInputTokens": 232284,
+          "webSearchRequests": 0,
+          "costUSD": 5.685166500000001
+        },
+        "claude-haiku-4-5@20251001": {
+          "inputTokens": 10225,
+          "outputTokens": 783,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 6396,
+          "webSearchRequests": 0,
+          "costUSD": 0.022135000000000002
+        }
+      },
+      "lastSessionId": "4a513d3e-29ef-4a5b-969e-c8b5b5dbbea1",
+      "lastFpsAverage": 7.33,
+      "lastFpsLow1Pct": 26.8,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 18076,
+        "frame_duration_ms_min": 0.20387500000651926,
+        "frame_duration_ms_max": 135.86704100016505,
+        "frame_duration_ms_avg": 2.0583660657235967,
+        "frame_duration_ms_p50": 1.3274375000037253,
+        "frame_duration_ms_p95": 1.8224686998641115,
+        "frame_duration_ms_p99": 36.44265748001979
+      }
     },
     "/Users/makoto.kataigi/repo/blitz": {
       "allowedTools": [],
@@ -604,39 +682,50 @@
         "watcher.ts",
         "StatsReaderImpl.java"
       ],
-      "exampleFilesGeneratedAt": 1770094497212,
+      "exampleFilesGeneratedAt": 1770952500573,
       "hasCompletedProjectOnboarding": true,
-      "lastCost": 2.4896167000000005,
-      "lastAPIDuration": 466019,
-      "lastAPIDurationWithoutRetries": 466004,
-      "lastToolDuration": 180441,
-      "lastDuration": 1699790,
-      "lastLinesAdded": 255,
-      "lastLinesRemoved": 133,
-      "lastTotalInputTokens": 39141,
-      "lastTotalOutputTokens": 31156,
-      "lastTotalCacheCreationInputTokens": 336152,
-      "lastTotalCacheReadInputTokens": 2116257,
+      "lastCost": 2.56003275,
+      "lastAPIDuration": 451000,
+      "lastAPIDurationWithoutRetries": 450945,
+      "lastToolDuration": 361241,
+      "lastDuration": 20389056,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 31764,
+      "lastTotalOutputTokens": 28139,
+      "lastTotalCacheCreationInputTokens": 554649,
+      "lastTotalCacheReadInputTokens": 6813955,
       "lastTotalWebSearchRequests": 0,
       "lastModelUsage": {
         "claude-haiku-4-5@20251001": {
-          "inputTokens": 38576,
-          "outputTokens": 12495,
-          "cacheReadInputTokens": 843257,
-          "cacheCreationInputTokens": 180512,
+          "inputTokens": 31673,
+          "outputTokens": 19810,
+          "cacheReadInputTokens": 6203535,
+          "cacheCreationInputTokens": 434298,
           "webSearchRequests": 0,
-          "costUSD": 0.41101669999999996
+          "costUSD": 1.293949
         },
-        "claude-opus-4-5@20251101": {
-          "inputTokens": 565,
-          "outputTokens": 18661,
-          "cacheReadInputTokens": 1273000,
-          "cacheCreationInputTokens": 155640,
+        "claude-opus-4-6": {
+          "inputTokens": 91,
+          "outputTokens": 8329,
+          "cacheReadInputTokens": 610420,
+          "cacheCreationInputTokens": 120351,
           "webSearchRequests": 0,
-          "costUSD": 2.0786
+          "costUSD": 1.26608375
         }
       },
-      "lastSessionId": "c22a0e17-5824-452e-b365-8bfb295ae9a7"
+      "lastSessionId": "d0cad352-faf4-46fd-b937-d157edf3c32c",
+      "lastFpsAverage": 0.52,
+      "lastFpsLow1Pct": 137.26,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 8892,
+        "frame_duration_ms_min": 0.17216600000392646,
+        "frame_duration_ms_max": 282.42124999687076,
+        "frame_duration_ms_avg": 1.1156973913610173,
+        "frame_duration_ms_p50": 0.5606875000012224,
+        "frame_duration_ms_p95": 3.3679295002657352,
+        "frame_duration_ms_p99": 7.781502909960682
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/wt4": {
       "allowedTools": [],
@@ -715,12 +804,12 @@
       },
       "exampleFiles": [
         "init_myenv.sh",
-        "init_tools.sh",
         "version.json",
+        "settings.json",
         "config.toml",
-        "AGENTS.md"
+        "known_marketplaces.json"
       ],
-      "exampleFilesGeneratedAt": 1769745789417,
+      "exampleFilesGeneratedAt": 1771210686030,
       "lastCost": 2.78419825,
       "lastAPIDuration": 129685,
       "lastAPIDurationWithoutRetries": 129671,
@@ -785,7 +874,7 @@
       "lastAPIDuration": 0,
       "lastAPIDurationWithoutRetries": 0,
       "lastToolDuration": 0,
-      "lastDuration": 174966,
+      "lastDuration": 233529399,
       "lastLinesAdded": 0,
       "lastLinesRemoved": 0,
       "lastTotalInputTokens": 0,
@@ -794,12 +883,21 @@
       "lastTotalCacheReadInputTokens": 0,
       "lastTotalWebSearchRequests": 0,
       "lastModelUsage": {},
-      "lastSessionId": "c2c74b26-3b56-469f-a2f5-00d080c768b2",
-      "lastFpsAverage": 0.33,
-      "lastFpsLow1Pct": 74.78,
+      "lastSessionId": "406e833a-e17a-44a5-9f12-27608e8ec326",
+      "lastFpsAverage": 0.01,
+      "lastFpsLow1Pct": 1.54,
       "disabledMcpServers": [
         "karte-copilot-knowledge-mcp"
-      ]
+      ],
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 120,
+        "frame_duration_ms_min": 0.4009159999999383,
+        "frame_duration_ms_max": 1011.7823339999886,
+        "frame_duration_ms_avg": 32.75376077505304,
+        "frame_duration_ms_p50": 2.37610450014472,
+        "frame_duration_ms_p95": 104.68619824962225,
+        "frame_duration_ms_p99": 586.3498952103694
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees": {
       "allowedTools": [],
@@ -885,9 +983,54 @@
       "lastFpsLow1Pct": 191.46,
       "lastModelUsage": {},
       "lastSessionId": "30beaf87-3ff4-4634-9247-bd453673dad5"
+    },
+    "/Users/makoto.kataigi/repo/karte-io-terraform": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [
+        "bigquery.tf",
+        "iam_orbit_local.tf",
+        "eventbridge_orbit_local.tf",
+        "clusters.tf",
+        "orbit-slo.tf"
+      ],
+      "exampleFilesGeneratedAt": 1770972907842,
+      "hasCompletedProjectOnboarding": true,
+      "lastCost": 0,
+      "lastAPIDuration": 0,
+      "lastAPIDurationWithoutRetries": 0,
+      "lastToolDuration": 0,
+      "lastDuration": 11187,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 0,
+      "lastTotalOutputTokens": 0,
+      "lastTotalCacheCreationInputTokens": 0,
+      "lastTotalCacheReadInputTokens": 0,
+      "lastTotalWebSearchRequests": 0,
+      "lastFpsAverage": 1.55,
+      "lastFpsLow1Pct": 143.04,
+      "lastModelUsage": {},
+      "lastSessionId": "1e4bea14-6566-42fe-9f4c-0fcc7c27f1d3",
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 17,
+        "frame_duration_ms_min": 0.3473340000000462,
+        "frame_duration_ms_max": 6.991208000000029,
+        "frame_duration_ms_avg": 1.3870048235292964,
+        "frame_duration_ms_p50": 0.8364579999997659,
+        "frame_duration_ms_p95": 3.97427519999994,
+        "frame_duration_ms_p99": 6.38782144000001
+      }
     }
   },
-  "changelogLastFetched": 1770616255038,
+  "changelogLastFetched": 1771206867054,
   "hasIdeOnboardingBeenShown": {
     "vscode": true
   },
@@ -895,7 +1038,7 @@
   "hasAvailableSubscription": true,
   "hasAcknowledgedCostThreshold": true,
   "recommendedSubscription": "",
-  "lastReleaseNotesSeen": "2.1.37",
+  "lastReleaseNotesSeen": "2.1.42",
   "s1mAccessCache": {
     "5ee4002d-fed1-4de6-ba42-0a6fcef36a6b": {
       "hasAccess": false,
@@ -941,6 +1084,9 @@
     ],
     "mkataigi/devenv": [
       "/Users/makoto.kataigi/repo/devenv"
+    ],
+    "plaidev/karte-io-terraform": [
+      "/Users/makoto.kataigi/repo/karte-io-terraform"
     ]
   },
   "officialMarketplaceAutoInstallAttempted": true,
@@ -953,16 +1099,16 @@
       "lastUsedAt": 1770265346279
     },
     "debug": {
-      "usageCount": 8,
-      "lastUsedAt": 1770616533073
+      "usageCount": 9,
+      "lastUsedAt": 1770960291445
     },
     "analyze-issue": {
       "usageCount": 1,
       "lastUsedAt": 1769750567482
     },
     "git-sync": {
-      "usageCount": 12,
-      "lastUsedAt": 1770609334590
+      "usageCount": 13,
+      "lastUsedAt": 1771206878324
     },
     "example-skills:skill-creator": {
       "usageCount": 1,
@@ -977,16 +1123,20 @@
       "lastUsedAt": 1770114944052
     },
     "create-pr": {
-      "usageCount": 4,
-      "lastUsedAt": 1770269935878
+      "usageCount": 8,
+      "lastUsedAt": 1770983906792
     },
     "reviewing-docs": {
-      "usageCount": 4,
-      "lastUsedAt": 1770269994262
+      "usageCount": 5,
+      "lastUsedAt": 1770984023784
     },
     "insights": {
       "usageCount": 2,
       "lastUsedAt": 1770170893108
+    },
+    "split-commit": {
+      "usageCount": 1,
+      "lastUsedAt": 1771210693080
     }
   },
   "mcpServers": {
@@ -1001,7 +1151,9 @@
   "lspRecommendationIgnoredCount": 2,
   "clientDataCache": {
     "data": null,
-    "timestamp": 1770616533100
+    "timestamp": 1771211049956
   },
-  "penguinModeOrgEnabled": true
+  "penguinModeOrgEnabled": true,
+  "showSpinnerTree": false,
+  "effortCalloutDismissed": true
 }
