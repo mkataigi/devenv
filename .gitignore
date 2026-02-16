@@ -3,6 +3,7 @@ id_dsa*
 *.tmp
 *.tmp/
 
+.claude.json
 .claude/debug/
 .claude/file-history/
 .claude/cache/
@@ -24,9 +25,10 @@ id_dsa*
 .claude/history.jsonl
 .claude/.update.lock
 .claude/.credentials.json
-.claude/plugins/installed_plugins.json
 .claude/stats-cache.json
 .claude/settings.local.json
+.claude/plugins/known_marketplaces.json
+.claude/plugins/installed_plugins.json
 
 .codex/log/
 .codex/sessions/
