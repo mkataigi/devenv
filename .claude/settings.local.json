@@ -28,7 +28,8 @@
       "Bash(then)",
       "Bash(elif [ -f \"$dir_name/.git\" ])",
       "Bash(else)",
-      "Bash(fi:*)"
+      "Bash(fi:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
