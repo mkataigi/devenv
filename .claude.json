@@ -1,5 +1,5 @@
 {
-  "numStartups": 375,
+  "numStartups": 376,
   "installMethod": "native",
   "autoUpdates": false,
   "preferredNotifChannel": "terminal_bell",
@@ -20,7 +20,7 @@
     "enter-to-steer-in-relatime": 365,
     "todo-list": 371,
     "# for memory": 218,
-    "install-github-app": 366,
+    "install-github-app": 376,
     "permissions": 367,
     "drag-and-drop-images": 367,
     "double-esc": 156,
@@ -810,39 +810,48 @@
         "known_marketplaces.json"
       ],
       "exampleFilesGeneratedAt": 1771210686030,
-      "lastCost": 2.78419825,
-      "lastAPIDuration": 129685,
-      "lastAPIDurationWithoutRetries": 129671,
-      "lastToolDuration": 128606,
-      "lastDuration": 4172668,
+      "lastCost": 2.1184250000000002,
+      "lastAPIDuration": 297384,
+      "lastAPIDurationWithoutRetries": 297327,
+      "lastToolDuration": 41801,
+      "lastDuration": 467223,
       "lastLinesAdded": 0,
       "lastLinesRemoved": 0,
-      "lastTotalInputTokens": 5010,
-      "lastTotalOutputTokens": 4103,
-      "lastTotalCacheCreationInputTokens": 97637,
-      "lastTotalCacheReadInputTokens": 443401,
+      "lastTotalInputTokens": 14119,
+      "lastTotalOutputTokens": 13644,
+      "lastTotalCacheCreationInputTokens": 134048,
+      "lastTotalCacheReadInputTokens": 2486582,
       "lastTotalWebSearchRequests": 0,
       "lastModelUsage": {
         "claude-haiku-4-5@20251001": {
-          "inputTokens": 4958,
-          "outputTokens": 358,
+          "inputTokens": 13049,
+          "outputTokens": 1575,
           "cacheReadInputTokens": 0,
-          "cacheCreationInputTokens": 0,
+          "cacheCreationInputTokens": 58133,
           "webSearchRequests": 0,
-          "costUSD": 0.006748
+          "costUSD": 0.09359025
         },
-        "claude-opus-4-1@20250805": {
-          "inputTokens": 52,
-          "outputTokens": 3745,
-          "cacheReadInputTokens": 443401,
-          "cacheCreationInputTokens": 97637,
+        "claude-opus-4-6": {
+          "inputTokens": 1070,
+          "outputTokens": 12069,
+          "cacheReadInputTokens": 2486582,
+          "cacheCreationInputTokens": 75915,
           "webSearchRequests": 0,
-          "costUSD": 2.7774502500000002
+          "costUSD": 2.02483475
         }
       },
-      "lastSessionId": "68da952f-7cc4-4625-9e0a-2c665d1a7388",
-      "lastFpsAverage": 1.91,
-      "lastFpsLow1Pct": 283.99
+      "lastSessionId": "2cc03845-f5ef-4a4a-875b-2ee896e42b42",
+      "lastFpsAverage": 11.03,
+      "lastFpsLow1Pct": 112.66,
+      "lastSessionMetrics": {
+        "frame_duration_ms_count": 5152,
+        "frame_duration_ms_min": 0.21691600000485778,
+        "frame_duration_ms_max": 26.53387499996461,
+        "frame_duration_ms_avg": 2.021395829774984,
+        "frame_duration_ms_p50": 1.7978335000079824,
+        "frame_duration_ms_p95": 5.222858900002756,
+        "frame_duration_ms_p99": 8.71424609001493
+      }
     },
     "/Users/makoto.kataigi/repo/karte-io-systems.worktrees/wt5": {
       "allowedTools": [],
@@ -1135,8 +1144,8 @@
       "lastUsedAt": 1770170893108
     },
     "split-commit": {
-      "usageCount": 1,
-      "lastUsedAt": 1771210693080
+      "usageCount": 2,
+      "lastUsedAt": 1771211163146
     }
   },
   "mcpServers": {
@@ -1151,7 +1160,7 @@
   "lspRecommendationIgnoredCount": 2,
   "clientDataCache": {
     "data": null,
-    "timestamp": 1771211049956
+    "timestamp": 1771211218991
   },
   "penguinModeOrgEnabled": true,
   "showSpinnerTree": false,
