@@ -1,5 +1,5 @@
 ---
-name: system-cleanup
+name: system-update-cleanup
 description: Homebrewパッケージの更新とDockerの不要イメージ削除を行うシステムクリーンアップスキル。「システムクリーンアップ」「brew更新」「docker掃除」「パッケージ更新」などのリクエストに対して使用してください。
 disable-model-invocation: true
 user-invocable: true
