@@ -93,6 +93,8 @@ else
   # ブランチが存在しない場合：メインブランチから新規作成
   git checkout -b "$worktree_name" <main_branch>
 fi
+# upstreamをデフォルトブランチに設定
+git branch --set-upstream-to=origin/<main_branch>
 ```
 
 ### Step 4: 結果の報告
